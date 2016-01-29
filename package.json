@@ -1,0 +1,24 @@
+{
+  "name": "zooop_server",
+  "version": "0.1.0",
+  "description": "Server Implementation of ZOOOP service ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenoken/Zooop-Server.git"
+  },
+  "author": "zooop dev team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenoken/Zooop-Server/issues"
+  },
+  "homepage": "https://github.com/stephenoken/Zooop-Server#readme"
+}
