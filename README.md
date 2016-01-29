@@ -12,4 +12,4 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 
 ### Deploying Server
 - `cd` into working directory
-- Run `nodejs server.js`
+- Run `npm start`
