@@ -27,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.listen(port||80,()=>{
-  console.log(`Zooop is now running on port ${port||80}`);
+app.listen(port||5000,()=>{
+  console.log(`Zooop is now running on port ${port||5000}`);
 });
+
+module.exports = app;
