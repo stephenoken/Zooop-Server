@@ -12,6 +12,7 @@
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^5.0.0-beta6",
     "chai": "^3.5.0",
     "chai-http": "^1.0.0",
     "gulp": "^3.9.0",

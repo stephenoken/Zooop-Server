@@ -15,6 +15,11 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 - Run `npm start-dep` will open on port 80
 - Run `npm start` will  open on port 5000
 
+## Development Environment
+- Stephen
+  - Atom Text Editor
+  - ITerm 2 (with zsh)
+  - ESLint
 ## Project Structure
 The structure of the project:
 ```

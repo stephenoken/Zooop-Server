@@ -3,7 +3,9 @@
 const chai = require("chai");
 const chaiHttp = require('chai-http');
 const expect = chai.expect;
+/*eslint-disable */
 const should = chai.should();
+/*eslint-enable */
 
 chai.use(chaiHttp);
 //Run an instance of the server
