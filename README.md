@@ -43,7 +43,7 @@ The structure of the project:
 ├── server.js
 ├── tests
 │   └── server
-│       └── index-tests.js
+│       └── index_tests.js
 └── views
     └── index.hbs
 ```
