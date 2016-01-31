@@ -20,6 +20,7 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
   - Atom Text Editor
   - ITerm 2 (with zsh)
   - ESLint
+  
 ## Project Structure
 The structure of the project:
 ```
