@@ -80,6 +80,7 @@ The structure of the project:
 - <a href="https://mochajs.org/">Mocha</a>
 - <a href="http://chaijs.com/">Chai</a>
 - <a href="https://www.npmjs.com/">NpmJS</a>
+- <a href="http://handlebarsjs.com/">HandlebarsJs (.hbs)</a>
 
 ## Interesting Articles
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
