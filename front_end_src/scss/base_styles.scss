@@ -10,7 +10,7 @@ body {
 }
 
 .zooop__header{
-  border: solid 2px $border-colour;
+  border-bottom: solid 2px $border-colour;
 }
 
 .zooop_title{
@@ -24,8 +24,6 @@ body {
   }
 }
 
-.zooop_sign_up_btn{
-  position: relative;
-  left: 35%;
-  margin-top: 80%;
+.zooop_title_grid{
+  height: 150px;
 }
