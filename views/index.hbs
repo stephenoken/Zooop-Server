@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="mdl-layout mdl-layout--fixed-header">
+      {{!-- The header bar--}}
       <header class="zooop__header">
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">{{title}}</span>
@@ -23,15 +24,18 @@
         </div>
       </header>
     </div>
+    {{!-- Similar to bootstrap we define a row, in this case mdl-grid --}}
+    {{!-- MDL uses a 12 grid system, look up the Readme.md for more details --}}
     <div class="mdl-grid zooop_title_grid">
-      <div class="mdl-cell mdl-cell--4-col"></div>
-      <div class="mdl-cell mdl-cell--4-col">
-        <object type="image/svg+xml" data="images/zooop_title.svg">Your browser does not support SVG</object>
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet"></div>
+      <div class="mdl-cell--middle mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+        <!-- <object type="image/svg+xml" data="images/zooop_title.svg">Your browser does not support SVG</object> -->
+        <img src="./images/zooop_title.png" alt="Zooop" width="400"/>
       </div>
-      <div class="mdl-cell mdl-cell--4-col"></div>
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet"></div>
     </div>
     <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--4-col">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
         <div class="mdl-card mdl-shadow--4dp">
           <div class="mdl-card__media zooop_card_image">
             <img src="images/food.jpeg">
@@ -45,7 +49,7 @@
         </div>
       </div>
       <div class="mdl-cell mdl-cell--4-col"></div>
-      <div class="mdl-cell mdl-cell--4-col">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
         <div class="mdl-card mdl-shadow--4dp">
           <div class="mdl-card__media zooop_card_image">
             <img src="images/food.jpeg">

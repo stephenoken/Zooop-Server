@@ -15,8 +15,8 @@ gulp.task("browser-sync",()=>{
   gulp.watch("front_end_src/*").on('change', browserSync.reload);
 });
 
-gulp.task("clean:public",()=>{
-  return del(["public"]);
+gulp.task("clean:public/images",()=>{
+  return del(["public/images"]);
 });
 //Compiles SCSS to CSS
 // TODO: Get the source maps to work
