@@ -20,7 +20,7 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
   - Atom Text Editor
   - ITerm 2 (with zsh)
   - ESLint
-  
+
 ## Project Structure
 The structure of the project:
 ```
@@ -28,17 +28,27 @@ The structure of the project:
 ├── README.md
 ├── front_end_src
 │   ├── images
+│   │   ├── food.jpeg
+│   │   ├── hero_img.JPG
+│   │   └── zooop_title.svg
 │   ├── javascripts
 │   │   └── dependancies
 │   └── scss
+│       └── base_styles.scss
 ├── gulp_tasks
+│   ├── images.js
+│   ├── scss.js
 │   └── tests.js
 ├── gulpfile.js
 ├── package.json
 ├── public
 │   ├── images
+│   │   ├── food.jpeg
+│   │   ├── hero_img.JPG
+│   │   └── zooop_title.svg
 │   ├── javascripts
 │   └── stylesheets
+│       └── styles.css
 ├── routes
 │   └── index.js
 ├── server.js
@@ -49,14 +59,17 @@ The structure of the project:
     └── index.hbs
 ```
 <i>The file structure was created using `tree -I 'node_modules'`</i>
+
 #### Gulpfile.js
 - Build system for automating tasks
 - Any tasks that you want to be run by default can be called here
 - Any new tasks should be put into their own file and placed in the `gulp_tasks` folder.
 
-#### Public
+#### Front End Src
 - Contains all the static resources that are available to the client.  
 
+#### Public
+- All the processed resources are to be deposited here.
 #### Routes
 - All routes that are to be made available should be placed here
 
@@ -82,6 +95,7 @@ The structure of the project:
 - <a href="http://chaijs.com/">Chai</a>
 - <a href="https://www.npmjs.com/">NpmJS</a>
 - <a href="http://handlebarsjs.com/">HandlebarsJs (.hbs)</a>
+- <a href="http://www.getmdl.io/">MDL</a>
 
 ## Interesting Articles
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>

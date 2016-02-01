@@ -17,14 +17,18 @@
     "chai": "^3.5.0",
     "chai-http": "^1.0.0",
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
     "gulp-mocha": "^2.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
     "mocha": "^2.4.5",
     "require-dir": "^0.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-prod": "sudo node server.js 80",
-    "start": "node server.js"
+    "start": "node server.js 5000"
   },
   "repository": {
     "type": "git",
