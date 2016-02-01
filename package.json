@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
+    "browser-sync": "^2.11.1",
     "chai": "^3.5.0",
     "chai-http": "^1.0.0",
     "gulp": "^3.9.0",
