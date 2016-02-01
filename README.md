@@ -13,7 +13,7 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 ## Deploying Server
 - `cd` into working directory
 - Run `npm start-dep` will open on port 80
-- Run `npm start` will  open on port 5000
+- Run `gulp` in the root of the project, this will open your default browser on port 3000
 
 ## Development Environment
 - Stephen
@@ -96,6 +96,10 @@ The structure of the project:
 - <a href="https://www.npmjs.com/">NpmJS</a>
 - <a href="http://handlebarsjs.com/">HandlebarsJs (.hbs)</a>
 - <a href="http://www.getmdl.io/">MDL</a>
+- <a href="https://www.browsersync.io/">BrowserSync</a>
+
+## BrowserSync
+- This allows you to perform live reloading of the public resources and html files.
 
 ## Interesting Articles
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
