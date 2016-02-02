@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const routes = require("./routes/index");
+const apiRoutes = require("./routes/api");
 
 // Set port for local development
 const port = process.argv[2];
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', routes);
+app.use('/api',apiRoutes);
 
 app.listen(port||5001,()=>{
   console.log(`Zooop is now running on port ${port||5001}`);
