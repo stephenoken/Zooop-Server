@@ -21,6 +21,9 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
   - ITerm 2 (with zsh)
   - ESLint
 
+## Global Dependancies
+- `npm install --global gulp-cli`
+
 ## Project Structure
 The structure of the project:
 ```
