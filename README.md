@@ -12,7 +12,7 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 
 ## Deploying Server
 - `cd` into working directory
-- Run `npm start-dep` will open on port 80
+- Run `npm startProd` will open on port 80
 - Run `gulp` in the root of the project, this will open your default browser on port 3000
 
 ## Development Environment

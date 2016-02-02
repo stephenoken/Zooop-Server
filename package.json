@@ -28,7 +28,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-prod": "sudo node backend_src/server.js 80",
+    "prodKill": "sudo kill `sudo lsof -t -i:80`",
+    "startProd": "npm prodKill && gulp prod && sudo node backend_src/server.js 80",
     "start": "node backend_src/server.js 5000"
   },
   "repository": {
