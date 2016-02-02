@@ -28,8 +28,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-prod": "sudo node server.js 80",
-    "start": "node server.js 5000"
+    "start-prod": "sudo node backend_src/server.js 80",
+    "start": "node backend_src/server.js 5000"
   },
   "repository": {
     "type": "git",
