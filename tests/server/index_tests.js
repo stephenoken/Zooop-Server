@@ -28,3 +28,14 @@ describe('Index Routes',() => {
       });
   });
 });
+// 
+// describe('Android Routes',() =>{
+//   it('it should respond with ACK to User login',() =>{
+//     chai.request(server)
+//       .put("/android/user")
+//       .send({tokenID:"foo"})
+//       .end((err,res)=>{
+//         res.should.to.be.true;
+//       });
+//   });
+// });
