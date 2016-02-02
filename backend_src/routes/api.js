@@ -7,17 +7,19 @@ class User {
     this.firstName = firstName;
     this.lastName = lastName;
     this.country = country;
-    this.favDish;
   }
-
+  setFavDish(favDish){
+    this.favDish = favDish;
+  }
+  response(){
+    return `${this.firstName} has been created and likes ${this.favDish}`;
+  }
 }
 router.post('/getInfo',(req,res)=>{
-  res.send(req.param("Foo")+" You ");
+  //req.body allows you to send a JSON object to the server securely
+  var user = new User(req.body.firstName,req.body.lastName,req.body.country);
+  user.setFavDish(req.body.favDish);
+  res.type('html').send(user.response());
 });
-
-router.post('/addUser',function (req,res) {
-
-});
-
 
 module.exports = router;
