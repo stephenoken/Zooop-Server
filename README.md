@@ -24,7 +24,7 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 ## Project Structure
 The structure of the project:
 ```
-.
+
 ├── README.md
 ├── front_end_src
 │   ├── images

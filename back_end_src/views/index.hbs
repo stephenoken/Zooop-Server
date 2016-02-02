@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.0/material.blue-light_blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./stylesheets/styles.css" media="screen" title="base styles" charset="utf-8">
+  </head>
+  <body>
+    <div class="mdl-layout mdl-layout--fixed-header">
+      {{!-- The header bar--}}
+      <header class="zooop__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">{{title}}</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">About Us</a>
+            <a class="mdl-navigation__link" href="">Pricing</a>
+            <a class="mdl-navigation__link" href="">Log In</a>
+            <a class="mdl-navigation__link" href="">Sign up</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+    {{!-- Similar to bootstrap we define a row, in this case mdl-grid --}}
+    {{!-- MDL uses a 12 grid system, look up the Readme.md for more details --}}
+    <div class="mdl-grid zooop_title_grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet"></div>
+      <div class="mdl-cell--middle mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+        <!-- <object type="image/svg+xml" data="images/zooop_title.svg">Your browser does not support SVG</object> -->
+        <img src="./images/zooop_title.png" alt="Zooop" width="400"/>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet"></div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+        <div class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__media zooop_card_image">
+            <img src="images/food.jpeg">
+          </div>
+          <div class="mdl-card__supporting-text">
+            Keep in touch with your patrons.
+          </div>
+          <div class="mdl-card__supporting-text">
+          Zooop allows you to find and communicate with the people who are truely interested in your cusine and services.
+          </div>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col"></div>
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
+        <div class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__media zooop_card_image">
+            <img src="images/food.jpeg">
+          </div>
+          <div class="mdl-card__supporting-text">
+            Keep in touch with your patrons!
+          </div>
+          <div class="mdl-card__supporting-text">
+          Zooop allows you to find and communicate with the people who are truely interested in your cusine and services.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  </body>
+</html>
