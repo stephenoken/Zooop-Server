@@ -28,14 +28,27 @@ describe('Index Routes',() => {
       });
   });
 });
-// 
-// describe('Android Routes',() =>{
-//   it('it should respond with ACK to User login',() =>{
-//     chai.request(server)
-//       .put("/android/user")
-//       .send({tokenID:"foo"})
-//       .end((err,res)=>{
-//         res.should.to.be.true;
-//       });
-//   });
-// });
+
+var postData = {
+  "firstName":"John",
+  "lastName":"Appleseed",
+  "facebookTokenAuth":"1235644bfgfgsgfbsfs433253h",
+  "country":"Sweden",
+  "favDish":"Mongolian"
+};
+
+describe('API Routes',() =>{
+  it('it should respond with ACK to User login',(done) =>{
+    //The done function allows the test to be run asynchronously
+    chai.request(server)
+      .post("/api/getInfo")//Set the HTTP method type
+      .send(postData)//Send the data to the server
+      .end((err,res)=>{//The response from the server
+        // console.log(res);
+        expect(res).to.have.status(200);
+        expect(res).to.be.html;
+        expect(res.text).to.be.equal("John has been created and likes Mongolian");
+        done();
+      });
+  });
+});
