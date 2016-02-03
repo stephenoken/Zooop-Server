@@ -6,7 +6,7 @@ const expect = chai.expect;
 /*eslint-disable */
 const should = chai.should();
 /*eslint-enable */
-
+const testData = require("./routes_test_data");
 chai.use(chaiHttp);
 //Run an instance of the server
 const server = require("./../../backend_src/server");
@@ -29,25 +29,29 @@ describe('Index Routes',() => {
   });
 });
 
-var postData = {
-  "firstName":"John",
-  "lastName":"Appleseed",
-  "facebookTokenAuth":"1235644bfgfgsgfbsfs433253h",
-  "country":"Sweden",
-  "favDish":"Mongolian"
-};
-
 describe('API Routes',() =>{
-  it('it should respond with ACK to User login',(done) =>{
+  it('register a new user',(done) =>{
     //The done function allows the test to be run asynchronously
     chai.request(server)
       .post("/api/getInfo")//Set the HTTP method type
-      .send(postData)//Send the data to the server
+      .send(testData.userInfoData)//Send the data to the server
       .end((err,res)=>{//The response from the server
         // console.log(res);
-        expect(res).to.have.status(200);
+        expect(res).to.have.status(201);
         expect(res).to.be.html;
         expect(res.text).to.be.equal("John has been created and likes Mongolian");
+        done();
+      });
+  });
+
+  it('return Mexican resturants with in the user\'s locality',(done) =>{
+    chai.request(server)
+      .get("/api/businessSearch")
+      .query(testData.searchData)
+      .end((err,res)=>{
+        expect(res).to.have.status(200);
+        expect(res).to.be.json;
+        expect(res.body["resturant1"]).to.contain({name:"Boojum"});
         done();
       });
   });
