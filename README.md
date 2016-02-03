@@ -109,3 +109,5 @@ The structure of the project:
 
 ## Interesting Articles
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
+- <a href="http://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">Ubuntu VM stuff</a>
+- <a href="http://www.restapitutorial.com/lessons/httpmethods.html">Restful Methods</a>
