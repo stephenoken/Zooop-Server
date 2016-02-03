@@ -22,7 +22,7 @@ var searchData ={
     latitude:"53.34443",
     longitude: "6.2577"
   }
-}
+};
 /*End - This will need to be removed */
 router.post('/getInfo',(req,res)=>{
   //req.body allows you to send a JSON object to the server securely
@@ -33,8 +33,12 @@ router.post('/getInfo',(req,res)=>{
 });
 
 router.get('/businessSearch',(req,res)=>{
-  console.log("Request Query:=>");
-  console.log(req.query);
+  // console.log("Request Query:=>");
+  // console.log(req.query);
+  res.status(200).type('json').send(searchData);
+});
+
+router.get('/discoverSearch',(req,res)=>{
   res.status(200).type('json').send(searchData);
 });
 

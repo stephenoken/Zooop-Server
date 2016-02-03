@@ -55,4 +55,16 @@ describe('API Routes',() =>{
         done();
       });
   });
+
+  it('return discover results', function (done) {
+    chai.request(server)
+      .get("/api/discoverSearch")
+      .query(testData.discoverSearch)
+      .end((err,res)=>{
+        expect(res).to.have.status(200);
+        expect(res).to.be.json;
+        expect(res.body["resturant1"]).to.contain({name:"Boojum"});
+        done();
+      });
+  });
 });

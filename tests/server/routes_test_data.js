@@ -13,5 +13,9 @@ module.exports = {
     searchItem: "Mexican Resturants",
     latitude:"53.3444",
     longitude: "6.2577"
+  },
+  discoverSearch: {
+    latitude:"53.3444",
+    longitude: "6.2577"
   }
 };
