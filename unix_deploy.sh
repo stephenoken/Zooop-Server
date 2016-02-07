@@ -1,3 +1,2 @@
 npm i
 gulp
-pause;

@@ -10,6 +10,12 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 - Access the VM `ssh -i "~/path to/zooop.pem" ubuntu@ec2-52-49-107-62.eu-west-1.compute.amazonaws.com`  
 - Exit VM `exit`
 
+## Run Server Locally
+- Install node
+- Run `npm install --global gulp-cli`
+- Run `npm i` to download project dependancies
+- Run `gulp` or either the shell/bash scripts.
+
 ## Deploying Server
 - `cd` into working directory
 - Run `npm startProd` will open on port 80
@@ -20,9 +26,6 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
   - Atom Text Editor
   - ITerm 2 (with zsh)
   - ESLint
-
-## Global Dependancies
-- `npm install --global gulp-cli`
 
 ## Project Structure
 The structure of the project:
