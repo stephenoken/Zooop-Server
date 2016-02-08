@@ -15,6 +15,8 @@ const apiRoutes = require("./routes/api");
 // Set port for local development
 const app = express();
 
+app.set('port', (process.env.PORT || 5001));
+
 // View engine setup
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
@@ -30,8 +32,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
 app.use('/api',apiRoutes);
 
-app.listen(process.env.PORT||5001,()=>{
-  console.log(`Zooop is now running on port ${process.env.PORT||5001}`);
+app.listen(app.get('port')||5001,()=>{
+  console.log(`Zooop is now running on port ${app.get('port')||5001}`);
 });
 
 module.exports = app;
