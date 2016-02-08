@@ -19,13 +19,18 @@ const app = express();
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, '../public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+
+var dir = "../public";
+if (process.env.PORT) {
+  dir = "public";
+}
+// uncomment after placing your favicon in /public
+app.use(favicon(path.join(__dirname, dir + '/images', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, dir)));
 
 app.use('/', routes);
 app.use('/api',apiRoutes);
