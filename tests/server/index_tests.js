@@ -27,6 +27,15 @@ describe('Index Routes',() => {
         done();
       });
   });
+  it('servers login.html',(done) =>{
+    chai.request(server)
+      .get('/login')
+      .end((err,res)=>{
+        expect(res).to.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
 });
 
 describe('API Routes',() =>{
