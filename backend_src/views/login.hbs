@@ -1,18 +1,110 @@
-<!DOCTYPE html>
-<html>
-<body/>
-<form action="/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Log In to ZOOOP and advertise your business">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log In/Sign Up</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-red.min.css">
+  <link rel="stylesheet" href="./stylesheets/styles.css">
+  <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+    <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">ZOOOP</span>
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="demo-ribbon"></div>
+    <main class="demo-main mdl-layout__content">
+      <div class="demo-container mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+           <div class="mdl-tabs__tab-bar">
+            <a href="#tab1" class="mdl-tabs__tab">Log In</a>
+            <a href="#tab2" class="mdl-tabs__tab">Sign Up</a>
+          </div>
+          <div class="mdl-tabs__panel is-active" id= "tab1">
+           <form action="/login" method="post">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Username</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Password</label>
+            </div>
+            <div>
+              <button class="mdl-button mdl-js-button mdl-button--raised \">
+                Log In
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="mdl-tabs__panel" id= "tab2">
+          <form action="/signup" method="post">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">First Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Last Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Business Name</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Location</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Cuisine</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="sample3">
+              <label class="mdl-textfield__label" for="sample3">Type of business</label>
+            </div>
+            <div>
+              <button class="mdl-button mdl-js-button mdl-button--raised">
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>    
+
     </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
+  </div>
+  <footer class="demo-footer mdl-mini-footer">
+    <div class="mdl-mini-footer--left-section">
+      <ul class="mdl-mini-footer--link-list">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy and Terms</a></li>
+        <li><a href="#">User Agreement</a></li>
+      </ul>
     </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
+  </footer>
+</main>
+</div>
+<script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
 </body>
 </html>
