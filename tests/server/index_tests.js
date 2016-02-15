@@ -9,7 +9,7 @@ const should = chai.should();
 const testData = require("./routes_test_data");
 chai.use(chaiHttp);
 //Run an instance of the server
-const server = require("./../../backend_src/server");
+const server = require("./../../server");
 
 describe('Sample Tests',()=> {
   it('perform basic maths',()=>{

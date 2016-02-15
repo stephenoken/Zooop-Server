@@ -11,7 +11,7 @@ gulp.task("browser-sync",()=>{
   browserSync.init({
     proxy: 'localhost:5001'
   });
-  gulp.watch("views/*").on('change', browserSync.reload);
+  gulp.watch("app/views/*").on('change', browserSync.reload);
   gulp.watch("front_end_src/*").on('change', browserSync.reload);
 });
 
