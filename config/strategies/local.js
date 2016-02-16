@@ -11,7 +11,7 @@ module.exports = ()=>{
       usernameField: 'email',
       passwordField: 'password'
     },(email,password,done)=>{
-      User.authenicate(email,password,(err,user)=>{
+      User.authenticate(email,password,(err,user)=>{
         if (err) {
           return done(err);
         }

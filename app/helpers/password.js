@@ -36,4 +36,28 @@ function hashPassword(password,salt,callback) {
   }
 }
 
-module.exports = hashPassword;
+/**
+ * Verifies if a password matches a hash by hashing the password
+ * with a given salt
+ *
+ * @param {String} password
+ * @param {String} hash
+ * @param {String} salt
+ * @param {Function} callback
+ */
+function verify(password, hash, salt, callback) {
+  hashPassword(password, salt, function(err, hashedPassword) {
+    if (err) {
+      return callback(err);
+    }
+
+    if (hashedPassword === hash) {
+      callback(null, true);
+    } else {
+      callback(null, false);
+    }
+  });
+}
+
+module.exports.hash = hashPassword;
+module.exports.verify = verify;

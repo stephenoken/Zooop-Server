@@ -53,9 +53,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Import Configurations
-require('./config/routes').init(app);
 require('./config/mongoose').init(app);
 require('./config/models').init();
+require('./config/routes').init(app);
 require('./config/passport').init(app);
 
 app.use(function(req, res, next) {
