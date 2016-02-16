@@ -33,23 +33,47 @@ The structure of the project:
 ├── Procfile
 ├── README.md
 ├── app
-│   ├── db
-│   │   └── schema.js
+│   ├── controllers
+│   │   ├── account.js
+│   │   ├── authentication.js
+│   │   └── main.js
+│   ├── helpers
+│   │   └── password.js
+│   ├── middleware
+│   │   └── authentication.js
+│   ├── models
+│   │   ├── schema.js
+│   │   └── user.js
 │   ├── routes
 │   │   ├── api.js
+│   │   ├── authentication.js
 │   │   └── index.js
 │   └── views
+│       ├── dashboard.hbs
 │       ├── index.hbs
-│       └── login.hbs
+│       ├── login.hbs
+│       └── protected.hbs
+├── config
+│   ├── environments
+│   │   └── development.js
+│   ├── index.js
+│   ├── models.js
+│   ├── mongoose.js
+│   ├── passport.js
+│   ├── routes.js
+│   └── strategies
+│       └── local.js
 ├── front_end_src
 │   ├── images
 │   │   ├── favicon.ico
 │   │   ├── food.jpeg
 │   │   ├── hero_img.JPG
+│   │   ├── user.jpg
 │   │   ├── zooop_title.png
 │   │   └── zooop_title.svg
 │   └── scss
 │       ├── base_styles.scss
+│       ├── dashboard_page.scss
 │       └── login_page.scss
 ├── gulp_tasks
 │   ├── front_end_tasks.js
