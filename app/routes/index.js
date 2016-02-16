@@ -18,4 +18,8 @@ router.get('/logout', authCtrl.signout);
 router.get('/protected',auth.ensured,(req,res)=>{
   res.render('protected');
 });
+router.get("/dashboard",(req,res)=>{
+  res.render('dashboard');
+});
+
 module.exports = router;
