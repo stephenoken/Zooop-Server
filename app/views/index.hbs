@@ -18,7 +18,10 @@
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="">About Us</a>
             <a class="mdl-navigation__link" href="">Pricing</a>
+            {{currentUser}}
+            {{#if currentUser }}
             <a class="mdl-navigation__link" href="/login">Log In/Sign up</a>
+            {{/if}}
           </nav>
         </div>
       </header>

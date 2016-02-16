@@ -39,6 +39,7 @@
            <div class="mdl-tabs__tab-bar">
             <a href="#tab1" class="mdl-tabs__tab">Log In</a>
             <a href="#tab2" class="mdl-tabs__tab">Sign Up</a>
+            <a href="#tab3" class="mdl-tabs__tab">Sign Up</a>
           </div>
           <div class="mdl-tabs__panel is-active" id= "tab1">
            <form action="/login" method="post">
@@ -57,7 +58,7 @@
         </div>
         <div class="mdl-tabs__panel" id= "tab2">
           <form action="/signup" method="post">
-            <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label center">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label center">
               <input class="mdl-textfield__input" type="text" id="sample3">
               <label class="mdl-textfield__label" for="sample3">Business-Email</label>
             </div>
@@ -97,7 +98,11 @@
               <button class="mdl-button mdl-js-button mdl-button--raised">
                 Sign Up
               </button>
-            </div> -->
+            </div>
+          </form>
+        </div>
+        <div class="mdl-tabs__panel" id= "tab3">
+          <form action="/signup" method="post">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="email" name="email" id="sample3">
               <label class="mdl-textfield__label" for="sample3">Email</label>

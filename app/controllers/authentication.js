@@ -39,7 +39,7 @@ function signinUser(req, res, next) {
       res.format({
         html: function() {
           delete req.session.historyData;
-          res.redirect('/');
+          res.redirect('/dashboard');
         },
         // just in case :)
         text: function() {

@@ -6,10 +6,12 @@ const auth = require('./../middleware/authentication');
 const accountCtrl = require('./../controllers/account');
 const router = express.Router();
 
-router.get('/',mainCtrl.showPage('index',{title:'Zooop'}));
+// router.get('/',mainCtrl.showPage('index',{title:'Zooop'}));
+router.get('/',(req,res)=>{
+  res.render('index',{title:"Zooop",currentUser:req.user});
+});
 
 router.get("/login",(req,res)=>{
-  console.log(req.user);
   res.render('login');
 });
 
@@ -17,11 +19,8 @@ router.post('/login', authCtrl.signin);
 router.post('/signup',accountCtrl.signup);
 router.get('/logout', authCtrl.signout);
 
-router.get('/protected',auth.ensured,(req,res)=>{
-  res.render('protected');
-});
-router.get("/dashboard",(req,res)=>{
-  res.render('dashboard');
+router.get("/dashboard",auth.ensured,(req,res)=>{
+  res.render('dashboard',{user:req.user});
 });
 
 module.exports = router;

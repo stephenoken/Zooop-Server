@@ -8,5 +8,4 @@ function showPage(page,data){
   };
 }
 
-
 module.exports.showPage = showPage;
