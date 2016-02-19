@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const config = require('./index');
 
 function init(app) {
+  console.log(`MongoDB: Connecting to ${config.mongodb.uri}`);
   mongoose.connect(config.mongodb.uri);
 
   // If the Node process ends, cleanup existing connections

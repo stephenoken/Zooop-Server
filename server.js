@@ -11,8 +11,8 @@ const favicon = require('serve-favicon');
 const logger = require("morgan");
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-
 const session = require('express-session');
+const MongoStore= require('connect-mongo')(session);
 const passport = require('passport');
 
 // Set port for local development
@@ -38,6 +38,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public')));
 
+var env = app.get('env');
+
 //Session options
 var sessionOpts = {
     secret: "keyboard-cat",
@@ -45,7 +47,14 @@ var sessionOpts = {
     resave: false,
     saveUninitialized: false
 };
-app.use(session(sessionOpts));
+switch (env) {
+  case 'production':
+    sessionOpts.store = new MongoStore({
+      url: config.mongodb.uri
+    });
+  default:
+  app.use(session(sessionOpts));
+}
 /**
  * Use passport session
  */
