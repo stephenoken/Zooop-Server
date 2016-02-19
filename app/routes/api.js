@@ -1,6 +1,9 @@
 "use strict";
 const express = require("express");
 const router = express.Router();
+const adsCtrl = require("./../controllers/adsController")
+
+const Advertisment = require("./../models/advertisment");
 /*Start - This will need to be removed */
 class User {
   constructor(firstName, lastName, country) {
@@ -31,6 +34,9 @@ router.post('/getInfo',(req,res)=>{
   //The response for the request
   res.status(201).type('html').send(user.response());
 });
+
+//router.post('/getAd', (req,res)=>{res.send(Advertisment.example)});
+router.post('/getAd', adsCtrl.sendAd());
 
 router.get('/businessSearch',(req,res)=>{
   // console.log("Request Query:=>");
