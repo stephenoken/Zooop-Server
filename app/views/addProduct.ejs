@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>add a new product</title>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+   <!--  <link rel="stylesheet" href="https://code.getmdl.io/1.1.0/material.blue-light_blue.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./stylesheets/styles.css" media="screen" title="base styles" charset="utf-8"> -->
+  </head>
+
+  <body>
+  	<h2>Product</h2>
+
+  	<form action="/myaction" method="post">
+         <fieldset>
+         	<label for="category">Category:</label><br>
+            <input type="text" id="category" name="category" placeholder="Enter a category" />
+            <br>
+            <label for="productName">Product name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter a product name" />
+            <br>
+            <br>
+            <u>properties:</u><br>
+			<label for="origin">Origin:</label><br>
+            <input type="text" id="origin" name="origin" placeholder="Enter the origin" />
+            <br>
+          	<label for="taste">Taste:</label><br>
+            <input type="text" id="taste" name="taste" placeholder="Define a teaste" />
+            <br>
+            <label for="dietaryTags">Dietary tags:</label><br>
+            <input type="text" id="tags" name="tags" placeholder="Set some diatary tags" />
+			<br>
+            <br>
+            <input type="submit" value="Create product" />
+         </fieldset>
+    </form>
+  </body>
+</html>

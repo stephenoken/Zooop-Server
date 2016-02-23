@@ -30,15 +30,4 @@ var ProductSchema = new Schema({
 });
 
 var sample = mongoose.model('Product', ProductSchema);
-var schema = new sample({ category: "Coffee",
-	name: "Cafe Latte",
-	properties:["Italy", "sweet", ["milk","sugar"]]});
-console.log(schema);
-schema.save(function(err){
- 		if(err){
- 			console.log(err);
- 		}
- 		console.log("Product added");
- 	});
 module.exports = mongoose.model('Product', ProductSchema);
-module.exports.sample = schema; 
