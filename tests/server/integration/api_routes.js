@@ -1,35 +1,16 @@
-"use strict";
+'use strict';
 
 const chai = require("chai");
 const chaiHttp = require('chai-http');
 const expect = chai.expect;
-/*eslint-disable */
-const should = chai.should();
-/*eslint-enable */
-const testData = require("./routes_test_data");
+const testData = require("./../fixtures/routes_test_data");
 chai.use(chaiHttp);
 //Run an instance of the server
-const server = require("./../../backend_src/server");
-
-describe('Sample Tests',()=> {
-  it('perform basic maths',()=>{
-    expect(2 + 2).to.be.equal(4);
-  });
-});
-
-describe('Index Routes',() => {
-  it('serve index.html', (done) =>{
-    chai.request(server)
-      .get('/')
-      .end((err,res)=>{
-        res.should.have.status(200);
-        res.should.be.html;
-        done();
-      });
-  });
-});
+process.env.NODE_ENV = 'test';
+const server = require("./../../../server");
 
 describe('API Routes',() =>{
+
   it('register a new user',(done) =>{
     //The done function allows the test to be run asynchronously
     chai.request(server)

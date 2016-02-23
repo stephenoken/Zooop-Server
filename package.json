@@ -7,39 +7,42 @@
     "node": "5.5.0"
   },
   "dependencies": {
+    "babelify": "^7.2.0",
     "body-parser": "^1.14.2",
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "chai": "^3.5.0",
+    "chai-http": "2.0.0",
+    "connect-mongo": "^1.1.0",
     "cookie-parser": "^1.4.1",
+    "crypto": "0.0.3",
+    "del": "^2.2.0",
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "hbs": "^4.0.0",
-    "morgan": "^1.6.1",
-    "serve-favicon": "^2.3.0",
-	  "mongoose": "*",
+    "express-session": "^1.13.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "require-dir": "^0.3.0",
-    "browser-sync": "^2.11.1",
-    "chai": "^3.5.0",
-    "chai-http": "2.0.0",
-    "del": "^2.2.0",
     "gulp-mocha": "^2.2.0",
     "gulp-sass": "^2.1.1",
-    "mocha": "^2.4.5"
-  },
-  "devDependencies": {
-    "babel-eslint": "^5.0.0-beta6",
-    "browser-sync": "^2.11.1",
-    "chai": "^3.5.0",
-    "chai-http": "^1.0.0",
-    "del": "^2.2.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "mocha": "^2.4.5",
+    "mongoose": "*",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "require-dir": "^0.3.0",
+    "serve-favicon": "^2.3.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend_src/server.js",
+    "start": "NODE_ENV=production node server.js",
     "postinstall": "node node_modules/gulp/bin/gulp.js prod"
   },
   "repository": {

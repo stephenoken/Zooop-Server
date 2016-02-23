@@ -30,39 +30,72 @@ To connect to the VM you'll need the zooom.pem file, which is available on the #
 ## Project Structure
 The structure of the project:
 ```
-
+├── Procfile
 ├── README.md
+├── app
+│   ├── controllers
+│   │   ├── account.js
+│   │   ├── authentication.js
+│   │   └── main.js
+│   ├── helpers
+│   │   └── password.js
+│   ├── middleware
+│   │   └── authentication.js
+│   ├── models
+│   │   ├── schema.js
+│   │   └── user.js
+│   ├── routes
+│   │   ├── api.js
+│   │   ├── authentication.js
+│   │   └── index.js
+│   └── views
+│       ├── dashboard.hbs
+│       ├── index.hbs
+│       ├── login.hbs
+│       └── protected.hbs
+├── config
+│   ├── environments
+│   │   └── development.js
+│   ├── index.js
+│   ├── models.js
+│   ├── mongoose.js
+│   ├── passport.js
+│   ├── routes.js
+│   └── strategies
+│       └── local.js
 ├── front_end_src
 │   ├── images
+│   │   ├── favicon.ico
 │   │   ├── food.jpeg
 │   │   ├── hero_img.JPG
+│   │   ├── user.jpg
+│   │   ├── zooop_title.png
 │   │   └── zooop_title.svg
-│   ├── javascripts
-│   │   └── dependancies
 │   └── scss
-│       └── base_styles.scss
+│       ├── base_styles.scss
+│       ├── dashboard_page.scss
+│       └── login_page.scss
 ├── gulp_tasks
-│   ├── images.js
-│   ├── scss.js
+│   ├── front_end_tasks.js
 │   └── tests.js
 ├── gulpfile.js
 ├── package.json
 ├── public
 │   ├── images
+│   │   ├── favicon.ico
 │   │   ├── food.jpeg
 │   │   ├── hero_img.JPG
+│   │   ├── zooop_title.png
 │   │   └── zooop_title.svg
-│   ├── javascripts
 │   └── stylesheets
 │       └── styles.css
-├── routes
-│   └── index.js
 ├── server.js
 ├── tests
 │   └── server
-│       └── index_tests.js
-└── views
-    └── index.hbs
+│       ├── index_tests.js
+│       └── routes_test_data.js
+├── unix_deploy.sh
+└── windowDeploy.bat
 ```
 <i>The file structure was created using `tree -I 'node_modules'`</i>
 
