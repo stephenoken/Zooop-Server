@@ -3,6 +3,6 @@
 module.exports = {
   app: "Zooop",
   mongodb: {
-    uri: 'mongodb://localhost/zooop-dev'
+    uri: 'mongodb://localhost/zooop-test'
   }
 };

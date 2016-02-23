@@ -12,8 +12,6 @@ const passport = require('passport');
  */
 function signinUser(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
-    console.log("Error" + err);
-    console.log("User" + user);
     if (err || !user) {
       return res.format({
         html: function() {
