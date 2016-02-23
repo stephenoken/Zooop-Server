@@ -24,7 +24,7 @@ const config = require('./config');
 app.set('config',config);
 app.set('env',ENV);
 
-app.set('port', (process.env.PORT || 5002));
+app.set('port', (process.env.PORT || 5001));
 
 // View engine setup
 app.set('views', path.join(__dirname,'app/views'));
