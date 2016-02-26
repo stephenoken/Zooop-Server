@@ -28,7 +28,7 @@ function signupUser(req,res) {
   User.register(userData,(err,user)=>{
     if (err && (11000 === err.code || 11001 === err.code)) {
       req.session.historyData.message = 'E-mail is already in use.';
-      return res.redirect('signup');
+      return res.redirect('/dashboard');
     }
 
     if (err) {

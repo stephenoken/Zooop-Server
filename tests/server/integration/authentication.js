@@ -1,45 +1,41 @@
 'use strict';
+
 const chai = require("chai");
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
-chai.use(chaiHttp);
-//Run an instance of the server
-process.env.NODE_ENV = 'test';
-const server = require("./../../../server");
-const userFixture = require('./../fixtures/user');
+const request = require('request');
+const userData = require("./../fixtures/user");
+const config = require("./../../../config/index");
+const mongoose = require("mongoose");
+const User = require("./../../../app/models/user");
+const baseUrl = "http://localhost:5001";
 
-describe('Authentication', function () {
-
-  var mongoose,
-  User;
+describe('Authentication',()=>{
 
   before((done)=>{
-    // server.on('listening',()=>{
-    mongoose = server.get("mongoose");
-    User = mongoose.model('User');
-    User.create(userFixture,(err)=>{
-      if (err) {
-        console.log(`Test Mongo --> ${err}`);
-      }
+    mongoose.connect(config.mongodb.uri);
+    User.create(userData,(err)=>{
+      if(err) throw err;
+      done();
     });
-    // });
-    done();
   });
-
-  // it('sign in a user with valid credentials', function (done) {
-  //   chai.request(server)
-  //     .post("/login")
-  //     .send({
-  //       "email": userFixture.email,
-  //       "password": 'P@ssw0rd!'
-  //     })
-  //     .end((err,res)=>{
-  //       console.log(err);
-  //       expect(res).to.have.status(200);
-  //       console.log(res);
-  //       expect(res.body.email).to.equal(userFixture.email);
-  //       done();
-  //     });
-  //
-  // });
+  it('should sign in a user with valid credentials', function(done) {
+    request({
+      method: 'POST',
+      url: baseUrl + '/login',
+      form: {
+        'email': userData.email,
+        'password': 'P@ssw0rd!'
+      },
+      json:true
+    }, function(err, res, body) {
+      if (err) throw err;
+      expect(res.statusCode).to.equal(200);
+      console.log(`body--> ${body}`);
+      // expect(body)
+      // body.email.should.equal(userFixture.email);
+      // should.not.exist(body.password);
+      // should.not.exist(body.passwordSalt);
+      done();
+    });
+  });
 });
