@@ -4,20 +4,10 @@ const chai = require("chai");
 const expect = chai.expect;
 const request = require('request');
 const userData = require("./../fixtures/user");
-const config = require("./../../../config/index");
-const mongoose = require("mongoose");
-const User = require("./../../../app/models/user");
 const baseUrl = "http://localhost:5001";
 
 describe('Authentication',()=>{
 
-  before((done)=>{
-    mongoose.connect(config.mongodb.uri);
-    User.create(userData,(err)=>{
-      if(err) throw err;
-      done();
-    });
-  });
   it('should sign in a user with valid credentials', function(done) {
     request({
       method: 'POST',

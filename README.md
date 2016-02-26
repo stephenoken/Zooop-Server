@@ -144,3 +144,8 @@ The structure of the project:
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
 - <a href="http://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">Ubuntu VM stuff</a>
 - <a href="http://www.restapitutorial.com/lessons/httpmethods.html">Restful Methods</a>
+
+
+### Schema Information
+- Product schema is the master collection for every product
+- Discover Product is schema is for the products maintained in various collections based on their origin/ethnicity 
