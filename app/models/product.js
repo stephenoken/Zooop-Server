@@ -28,4 +28,10 @@ var ProductSchema = new Schema({
 	}
 });
 
+ProductSchema.statics.findByName = function (name,cb){
+	this.findOne({name:name}).exec((err,product)=>{
+		cb(product);
+	});
+};
+
 module.exports = mongoose.model('Product', ProductSchema);
