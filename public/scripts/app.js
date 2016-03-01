@@ -1,14 +1,12 @@
 const angular = require('angular');
-var hello = "Hello";
+
 
 
 require('./controllers/index');
+require('./controllers/ui/navbar_layout');
+require('./directives/index');
 
-
-console.log(`${hello} world!!`);
-console.log("Test!");
-
-const app = angular.module('zooopApp',['ngMaterial','zoopController']);
+const app = angular.module('zooopApp',['ngMaterial','ZooopController','ZooopDirective']);
 
 app.config(["$mdThemingProvider",($mdThemingProvider)=>{
   $mdThemingProvider.theme('default').primaryPalette('light-blue',{

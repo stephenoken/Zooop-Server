@@ -5,6 +5,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const del = require("del");
+const htmlmin = require("gulp-htmlmin");
 
 //This will cause the browser to reload automatically
 gulp.task("browser-sync",()=>{
@@ -45,4 +46,9 @@ gulp.task("ejs",()=>{
   return gulp.src("./app/views/**/*")
     .pipe(browserSync.stream());
 });
-// TODO: Add Javascript task here
+
+gulp.task("html",()=>{
+  return gulp.src("./public/partials/**/*.html")
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest('dist/partials'));
+});

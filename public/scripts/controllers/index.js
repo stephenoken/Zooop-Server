@@ -1,8 +1,11 @@
 const angular = require("angular");
-const zoopController = angular.module('zoopController',[]);
+const ZooopController = angular.module('ZooopController',[]);
 
-zoopController.controller('indexCtrl',['$scope',($scope)=>{
-  $scope.test = "Hello World";
+const navbarController = require('./ui/navbar_layout');
+
+ZooopController.controller('indexCtrl',['$scope',($scope)=>{
+  // $scope.test = "Hello World";
 }]);
 
-module.exports = zoopController;
+ZooopController.controller(navbarController.name,navbarController.controller);
+module.exports = ZooopController;

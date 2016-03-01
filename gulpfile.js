@@ -14,13 +14,14 @@ function gulpTasks() {
   gulp.watch("public/scss/**/*.scss",["styles"]);
   gulp.watch("public/scripts/**/*.js",["watch-js"]);
   gulp.watch("public/images/*",["clean:public/images","images"]);
+  gulp.watch("public/partials/**/*.html",["html"]);
 }
-gulp.task('default',["start-server","styles","images","build-js"],()=>{
+gulp.task('default',["start-server","styles","images","build-js","html"],()=>{
   gulpTasks();
 });
 
 gulp.task('prod',["styles","images"],()=>{});
 
-gulp.task('front-end',["styles","images","build-js"],()=>{
+gulp.task('front-end',["styles","images","build-js","html"],()=>{
   gulpTasks();
 });
