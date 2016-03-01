@@ -198,6 +198,8 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
+    background: #333;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 header .header-content .header-content-inner hr {
@@ -236,6 +238,8 @@ header .header-content .header-content-inner p {
         margin-left: auto;
         max-width: 80%;
         font-size: 18px;
+        background: #333;
+        background: rgba(0, 0, 0, 0.7);
     }
 }
 
