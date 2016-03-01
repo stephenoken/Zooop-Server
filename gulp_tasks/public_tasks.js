@@ -52,3 +52,10 @@ gulp.task("html",()=>{
   .pipe(htmlmin({collapseWhitespace: true}))
   .pipe(gulp.dest('dist/partials'));
 });
+
+gulp.task("vendor_scripts",()=>{
+  return gulp.src('./public/vendor_scripts/**/*.js')
+  .pipe(concat("vendor.js"))
+  .pipe(gulp.dest('./dist/scripts'));
+
+});
