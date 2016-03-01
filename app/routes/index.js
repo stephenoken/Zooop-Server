@@ -22,7 +22,7 @@ router.post('/login', authCtrl.signin);
 router.post('/signup',accountCtrl.signup);
 router.get('/logout', authCtrl.signout);
 
-router.get("/dashboard",auth.ensured,mainCtrl.showPage('dashboard',{test:"Hello World"}));
+router.get("/dashboard",auth.ensured,mainCtrl.showPage('dashboard'));
 
 
 
