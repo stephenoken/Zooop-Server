@@ -7,6 +7,7 @@ const _tasks = requireDir('./gulp_tasks');
 /*eslint-enable */
 
 function gulpTasks() {
+  gulp.start("vendor_scripts");
   gulp.start("test");
   gulp.start("browser-sync");
   gulp.watch("tests/**/*.js",["test"]);
