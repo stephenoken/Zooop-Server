@@ -46,3 +46,10 @@ gulp.task("ejs",()=>{
     .pipe(browserSync.stream());
 });
 // TODO: Add Javascript task here
+
+gulp.task("vendor_scripts",()=>{
+  return gulp.src('./public/vendor_scripts/**/*.js')
+  .pipe(concat("vendor.js"))
+  .pipe(gulp.dest('./dist/scripts'));
+
+});
