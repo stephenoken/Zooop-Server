@@ -6,6 +6,8 @@ const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const del = require("del");
 const htmlmin = require("gulp-htmlmin");
+const fs = require('fs');
+const path = require('path');
 
 //This will cause the browser to reload automatically
 gulp.task("browser-sync",()=>{
@@ -24,14 +26,26 @@ gulp.task("clean:public/images",()=>{
 // TODO: Get the source maps to work
 
 gulp.task("styles",()=>{
-  return gulp.src("./public/scss/**/*.scss")
-  .pipe(sass({outputStyle: 'compressed'}))
-  .pipe(sourcemaps.init())
-  .pipe(concat("styles.css"))
-  .pipe(gulp.dest("./dist/stylesheets"))
-  .pipe(browserSync.stream());
+  getDirectories("./public/scss").map((dir) => {
+    styles(dir);
+  });
 });
 
+function getDirectories(srcpath) {
+  return fs.readdirSync(srcpath).filter((file) =>{
+    return fs.statSync(path.join(srcpath, file)).isDirectory();
+  });
+}
+
+function styles(scssDirectory) {
+  return gulp.src(`./public/scss/${scssDirectory}/**/*.scss`)
+  .pipe(sourcemaps.init())
+  .pipe(sass({outputStyle: 'compressed'}))
+  .pipe(concat(`${scssDirectory}-styles.css`))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest("./dist/stylesheets"))
+  .pipe(browserSync.stream());
+}
 //Compresses and optimise images
 gulp.task("images",()=>{
   return gulp.src('public/images/*')
