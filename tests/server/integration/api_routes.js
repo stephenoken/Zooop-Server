@@ -9,21 +9,6 @@ const baseUrl = "http://localhost:5001/api";
 
 describe('API Routes',() =>{
 
-  // it('register a new user',(done) =>{
-  //   //The done function allows the test to be run asynchronously
-  //   request({
-  //     method: 'POST',
-  //     url: `${baseUrl}/getInfo`,
-  //     form: testData.userInfoData
-  //   },(err, res)=>{
-  //     if (err) throw err;
-  //     expect(res.statusCode).to.equal(200);
-  //     expect(res.headers["content-type"]).to.contain("text/html");
-  //     expect(res.body).to.be.equal("John has been created and likes Mongolian");
-  //     done();
-  //   });
-  // });
-
   it('return Mexican resturants with in the user\'s locality',(done) =>{
     request({
       method: 'GET',
