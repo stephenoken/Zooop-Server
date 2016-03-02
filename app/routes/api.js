@@ -30,7 +30,7 @@ router.post('/getInfo',(req,res)=>{
   var user = new User(req.body.firstName,req.body.lastName,req.body.country);
   user.setFavDish(req.body.favDish);
   //The response for the request
-  res.status(201).type('html').send(user.response());
+  res.status(200).type('html').send(user.response());
 });
 
 router.post('/getAd', adsCtrl.sendAd());

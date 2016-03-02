@@ -35,35 +35,50 @@ The structure of the project:
 ├── app
 │   ├── controllers
 │   │   ├── account.js
+│   │   ├── adsController.js
 │   │   ├── authentication.js
-│   │   └── main.js
+│   │   ├── discover_product.js
+│   │   ├── main.js
+│   │   └── product.js
 │   ├── helpers
+│   │   ├── master_product_helper.js
 │   │   └── password.js
 │   ├── middleware
 │   │   └── authentication.js
 │   ├── models
+│   │   ├── advertisment.js
+│   │   ├── discover_product.js
+│   │   ├── product.js
 │   │   ├── schema.js
 │   │   └── user.js
 │   ├── routes
 │   │   ├── api.js
 │   │   ├── authentication.js
+│   │   ├── discover_product.js
 │   │   └── index.js
 │   └── views
-│       ├── dashboard.hbs
-│       ├── index.hbs
-│       ├── login.hbs
-│       └── protected.hbs
+│       ├── addProduct.ejs
+│       ├── dashboard.ejs
+│       ├── index.ejs
+│       └── login.ejs
 ├── config
 │   ├── environments
-│   │   └── development.js
+│   │   ├── development.js
+│   │   ├── production.js
+│   │   └── test.js
 │   ├── index.js
 │   ├── models.js
 │   ├── mongoose.js
 │   ├── passport.js
 │   ├── routes.js
+│   ├── seed
+│   │   ├── data
+│   │   │   ├── products.js
+│   │   │   └── user.js
+│   │   └── seed_data.js
 │   └── strategies
 │       └── local.js
-├── front_end_src
+├── dist
 │   ├── images
 │   │   ├── favicon.ico
 │   │   ├── food.jpeg
@@ -71,12 +86,15 @@ The structure of the project:
 │   │   ├── user.jpg
 │   │   ├── zooop_title.png
 │   │   └── zooop_title.svg
-│   └── scss
-│       ├── base_styles.scss
-│       ├── dashboard_page.scss
-│       └── login_page.scss
+│   ├── scripts
+│   │   ├── build.js
+│   │   └── build.js.map
+│   └── stylesheets
+│       └── styles.css
 ├── gulp_tasks
+│   ├── browserify.js
 │   ├── front_end_tasks.js
+│   ├── server.js
 │   └── tests.js
 ├── gulpfile.js
 ├── package.json
@@ -85,15 +103,26 @@ The structure of the project:
 │   │   ├── favicon.ico
 │   │   ├── food.jpeg
 │   │   ├── hero_img.JPG
+│   │   ├── user.jpg
 │   │   ├── zooop_title.png
 │   │   └── zooop_title.svg
-│   └── stylesheets
-│       └── styles.css
+│   ├── scripts
+│   │   └── app.js
+│   └── scss
+│       ├── base_styles.scss
+│       ├── dashboard_page.scss
+│       └── login_page.scss
 ├── server.js
 ├── tests
 │   └── server
-│       ├── index_tests.js
-│       └── routes_test_data.js
+│       ├── fixtures
+│       │   ├── routes_test_data.js
+│       │   └── users.js
+│       └── integration
+│           ├── api_routes.js
+│           ├── authentication.js
+│           ├── discover_product_api.js
+│           └── index_routes.js
 ├── unix_deploy.sh
 └── windowDeploy.bat
 ```
@@ -104,10 +133,10 @@ The structure of the project:
 - Any tasks that you want to be run by default can be called here
 - Any new tasks should be put into their own file and placed in the `gulp_tasks` folder.
 
-#### Front End Src
+#### Public
 - Contains all the static resources that are available to the client.  
 
-#### Public
+#### Dist
 - All the processed resources are to be deposited here.
 #### Routes
 - All routes that are to be made available should be placed here
@@ -144,3 +173,8 @@ The structure of the project:
 - Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
 - <a href="http://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">Ubuntu VM stuff</a>
 - <a href="http://www.restapitutorial.com/lessons/httpmethods.html">Restful Methods</a>
+
+
+### Schema Information
+- Product schema is the master collection for every product
+- Discover Product is schema is for the products maintained in various collections based on their origin/ethnicity

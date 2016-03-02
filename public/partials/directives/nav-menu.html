@@ -1,0 +1,38 @@
+<div ng-controller="navBarLayoutCtrl">
+  <md-toolbar md-scroll-shrink ng-if="true">
+  <div class="md-toolbar-tools">
+    <md-button ng-click="toggleSideNav()" class="md-icon-button" aria-label="Menu">
+      <i class="material-icons">menu</i>
+    </md-button>
+    <h3>
+      <span>Zooop Dashboard</span>
+    </h3>
+  </div>
+  </md-toolbar>
+  <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="side-menu-left">
+      <md-toolbar>
+        <header class="nav-logo">
+          <div>
+            <img src="./images/Zooop-Logo.svg" alt="Zooop" class="zooop-logo"/>
+            <h1 class="logo-type md-heading">Zooop</h1>
+          </div>
+        </header>
+      </md-toolbar>
+      <div class="menu-links">
+        <md-button class="btns">
+          <i class="material-icons">home</i>Home
+        </md-button>
+        <md-button class="btns">
+          <i class="material-icons">shopping_cart</i>Purchase Ads
+        </md-button>
+        <md-button class="btns">
+          <i class="material-icons">restaurant_menu</i>Upload Catalogue
+        </md-button>
+        <md-button class="btns">
+          <i class="material-icons">settings</i>Settings
+        </md-button>
+      </div>
+    </md-sidenav>
+  </section>
+</div>
