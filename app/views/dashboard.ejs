@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="./stylesheets/dashboard-styles.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body layout="column" ng-controller="indexCtrl">
-  <ng-nav-menu/>
+    <ng-nav-menu/>
+
+    <div ng-view class="view-frame"></div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
