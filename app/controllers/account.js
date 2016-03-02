@@ -38,7 +38,7 @@ function signupUser(req,res) {
 
     req.logIn(user,()=>{
       delete req.session.historyData;
-      res.redirect('/');
+      res.redirect('/dashboard');
     });
   });
 }
