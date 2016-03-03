@@ -43,4 +43,35 @@ router.get('/discoverSearch',(req,res)=>{
   res.status(200).type('json').send(searchData);
 });
 
+router.post('/messageDiggy', (req,res)=>{
+/* just a basic example implementation */
+  var inMessage = req.body.message;
+  var outmessage = "";
+
+  var keys = ["burrito", "how are you", "hungry"];
+
+  for(key in keys) {
+    if(inMessage.indexOf(key) > -1) {
+      if(key == keys[0]) {
+        outmessage = "You should get a burrito from Boojum!"
+      }
+      else if(key == keys[1]) {
+        outmessage = "I'm a machine... I don't have feelings (yet)"
+      }
+      else if(key == keys[2]) {
+        outmessage = "me too :/"
+      }
+      else {
+        outmessage = "That's good for you!"
+      }
+    }
+  }
+
+  var diggyResponse ={
+    diggyResponse:outmessage
+  };
+
+  res.status(200).type('json').send(diggyResponse);
+});
+
 module.exports = router;
