@@ -43,7 +43,7 @@ router.get('/discoverSearch',(req,res)=>{
   res.status(200).type('json').send(searchData);
 });
 
-router.get)('/messageDiggy', (req,res)=>{
+router.post('/messageDiggy', (req,res)=>{
 /* just a basic example implementation */
   var inMessage = req.body.message;
   var outmessage = "";
