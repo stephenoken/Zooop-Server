@@ -53,11 +53,11 @@ function styles(scssDirectory) {
 //Compresses and optimise images
 gulp.task("images",()=>{
   return gulp.src('public/images/*')
-    	.pipe(imagemin({
-        		progressive: true
-      }))
-      .pipe(gulp.dest('./dist/images'))
-      .pipe(browserSync.stream());
+    	// .pipe(imagemin({
+     //    		progressive: true
+     //  }))
+      .pipe(gulp.dest('./dist/images'));
+      // .pipe(browserSync.stream());
 });
 
 gulp.task("ejs",()=>{
