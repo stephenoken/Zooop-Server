@@ -46,29 +46,32 @@ router.get('/discoverSearch',(req,res)=>{
 router.post('/messageDiggy', (req,res)=>{
 /* just a basic example implementation */
   var inMessage = req.body.message;
-  var outmessage = "";
+  var outMessage = "";
 
   var keys = ["burrito", "how are you", "hungry"];
+  console.log(keys);
 
-  for(key in keys) {
-    if(inMessage.indexOf(key) > -1) {
-      if(key == keys[0]) {
-        outmessage = "You should get a burrito from Boojum!"
-      }
-      else if(key == keys[1]) {
-        outmessage = "I'm a machine... I don't have feelings (yet)"
-      }
-      else if(key == keys[2]) {
-        outmessage = "me too :/"
-      }
-      else {
-        outmessage = "That's good for you!"
+  for(var i = 0; i < keys.length; i++) {
+    if(inMessage.indexOf(keys[i]) > -1) {
+      switch(i) {
+        case 0:
+          outMessage = "You should get a burrito from Boojum!";
+          break;
+        case 1:
+          outMessage = "I'm a machine... I don't have feelings (yet)";
+          break;
+        case 2:
+          outMessage = "me too :/";
+          break;
+        default:
+          outMessage = "That's good for you!";
+          break;
       }
     }
   }
 
   var diggyResponse ={
-    diggyResponse:outmessage
+    diggyResponse:outMessage
   };
 
   res.status(200).type('json').send(diggyResponse);

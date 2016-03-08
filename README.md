@@ -178,3 +178,6 @@ The structure of the project:
 ### Schema Information
 - Product schema is the master collection for every product
 - Discover Product is schema is for the products maintained in various collections based on their origin/ethnicity
+
+## Quirks with the build
+- If you've got tabs in your browser pointing to localhost:3000, close them when your finished as they keep trying to connect to port 5001
