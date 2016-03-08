@@ -3,6 +3,7 @@ const browserSync = require("browser-sync").create();
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
 const del = require("del");
 const htmlmin = require("gulp-htmlmin");
 const fs = require('fs');
@@ -20,6 +21,10 @@ gulp.task("browser-sync",()=>{
 
 gulp.task("clean:public/images",()=>{
   return del(["dist/images"]);
+});
+
+gulp.task("clean:dist",()=>{
+  return del(["dist"]);
 });
 //Compiles SCSS to CSS
 // TODO: Get the source maps to work
@@ -48,7 +53,11 @@ function styles(scssDirectory) {
 //Compresses and optimise images
 gulp.task("images",()=>{
   return gulp.src('public/images/*')
-      .pipe(gulp.dest('./dist/images'));
+    	.pipe(imagemin({
+        		progressive: true
+      }))
+      .pipe(gulp.dest('./dist/images'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task("ejs",()=>{
