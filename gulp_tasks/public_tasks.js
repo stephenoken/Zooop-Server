@@ -52,8 +52,8 @@ gulp.task("images",()=>{
     	/*.pipe(imagemin({
         		progressive: true
       }))*/
-      .pipe(gulp.dest('./dist/images'))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest('./dist/images'));
+      //.pipe(browserSync.stream());
 });
 
 gulp.task("ejs",()=>{
