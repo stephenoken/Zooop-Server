@@ -3,6 +3,7 @@ module.exports = {
   $routeConfig: [
     {path: '/', name: 'Home', component: 'home', useAsDefault: true},
     {path: '/purch-advertisement', name: 'Advertisement', component: 'advertisement' },	
-    {path: '/upload-catalogue', name: 'UploadCatalogue', component: 'uploadCatalogue'}
+    {path: '/upload-catalogue', name: 'UploadCatalogue', component: 'uploadCatalogue'},
+    {path: '/create-ad', name: 'CreateAd', component: 'createAd'}
   ]
 };
