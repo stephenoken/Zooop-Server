@@ -13,14 +13,17 @@ function gulpTasks() {
   gulp.watch("app/**/*",["test"]);
   gulp.watch("public/scss/**/*.scss",["styles"]);
   gulp.watch("public/scripts/**/*.js",["watch-js"]);
-  gulp.watch("public/images/*",["clean:public/images","images"]);
   gulp.watch("public/partials/**/*.html",["html"]);
 }
 gulp.task('default',["start-nodemon-server","styles","build-js","html"],()=>{
   gulpTasks();
 });
 
-gulp.task('prod',["styles","images","prod-build-js","vendor_scripts","html"],()=>{});
+gulp.task('prod',["styles","images","prod-build-js","vendor_scripts","html"],()=>{
+  process.nextTick(function() {
+    process.exit(0);
+  });
+});
 
 gulp.task('front-end',["start-node-server","styles","build-js","html"],()=>{
   gulpTasks();
