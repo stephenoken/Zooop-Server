@@ -18,11 +18,6 @@ gulp.task("browser-sync",()=>{
   gulp.watch("public/**/*").on('change', browserSync.reload);
 });
 
-
-gulp.task("clean:public/images",()=>{
-  return del(["dist/images"]);
-});
-
 gulp.task("clean:dist",()=>{
   return del(["dist"]);
 });

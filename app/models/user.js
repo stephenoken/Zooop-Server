@@ -24,6 +24,18 @@ var UserSchema = new Schema({
     required: true,
     select: false
   },
+  businessName: {
+    type: String,
+    required: true
+  },
+  businessType:{
+    type: String,
+    required: true
+  },
+  location:{
+    type: String,
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
@@ -88,8 +100,11 @@ UserSchema.statics.register = function(opts, callback) {
     data.passwordSalt = salt;
 
     //create the user
+    console.log("User");
+    console.log(data);
     self.model('User').create(data, function(err, user) {
       if (err) {
+        console.log(err);
         return callback(err, null);
       }
 

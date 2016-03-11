@@ -2,6 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const adsCtrl = require("./../controllers/adsController");
+const diggyBot = require("./../helpers/diggyBot");
+
 /*Start - This will need to be removed */
 class User {
   constructor(firstName, lastName, country) {
@@ -48,27 +50,7 @@ router.post('/messageDiggy', (req,res)=>{
   var inMessage = req.body.message;
   var outMessage = "";
 
-  var keys = ["burrito", "how are you", "hungry"];
-  console.log(keys);
-
-  for(var i = 0; i < keys.length; i++) {
-    if(inMessage.indexOf(keys[i]) > -1) {
-      switch(i) {
-        case 0:
-          outMessage = "You should get a burrito from Boojum!";
-          break;
-        case 1:
-          outMessage = "I'm a machine... I don't have feelings (yet)";
-          break;
-        case 2:
-          outMessage = "me too :/";
-          break;
-        default:
-          outMessage = "That's good for you!";
-          break;
-      }
-    }
-  }
+  outMessage = diggyBot.react(inMessage);
 
   var diggyResponse ={
     diggyResponse:outMessage

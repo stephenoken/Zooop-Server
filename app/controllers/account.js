@@ -4,6 +4,7 @@
 const _ = require('lodash');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const reqBodyPaser = require('./../helpers/req_body');
 
 
 function signupUser(req,res) {
@@ -24,7 +25,7 @@ function signupUser(req,res) {
     return res.redirect('signup');
   }
 
-  const userData = _.pick(req.body,'name','email','password');
+  const userData = reqBodyPaser.parseBody(req.body);
   User.register(userData,(err,user)=>{
     if (err && (11000 === err.code || 11001 === err.code)) {
       req.session.historyData.message = 'E-mail is already in use.';
