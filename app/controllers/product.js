@@ -1,5 +1,5 @@
 "use strict";
-const Product = require("./../models/product");
+const Product = require("./../models/master_product");
 
 function storeProduct () {
 	return (req, res)=>{
