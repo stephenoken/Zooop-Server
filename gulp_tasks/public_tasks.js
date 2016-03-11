@@ -18,11 +18,6 @@ gulp.task("browser-sync",()=>{
   gulp.watch("public/**/*").on('change', browserSync.reload);
 });
 
-
-gulp.task("clean:public/images",()=>{
-  return del(["dist/images"]);
-});
-
 gulp.task("clean:dist",()=>{
   return del(["dist"]);
 });
@@ -53,11 +48,11 @@ function styles(scssDirectory) {
 //Compresses and optimise images
 gulp.task("images",()=>{
   return gulp.src('public/images/*')
-    	// .pipe(imagemin({
-     //    		progressive: true
-     //  }))
-      .pipe(gulp.dest('./dist/images'));
-      // .pipe(browserSync.stream());
+    	.pipe(imagemin({
+        		progressive: true
+      }))
+      .pipe(gulp.dest('./dist/images'))
+      .pipe(browserSync.stream());
 });
 
 gulp.task("ejs",()=>{
