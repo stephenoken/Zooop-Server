@@ -34,6 +34,7 @@ router.post('/getInfo',(req,res)=>{
 });
 
 router.post('/getAd', adsCtrl.sendAd());
+router.post('/discover', adsCtrl.saveDiscoverAd());
 
 router.get('/businessSearch',(req,res)=>{
   res.status(200).type('json').send(searchData);

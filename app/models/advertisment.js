@@ -11,15 +11,15 @@ var AdSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
+    required: false,
     select: false
   },
   taste:{
     type: String,
-    required: true
+    required: false
   },
   dietaryTags:{
-    type: [String],
+    type: {},
     required: true
   },
   image: {
