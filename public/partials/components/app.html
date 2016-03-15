@@ -1,4 +1,4 @@
-<div ng-controller="NavBarLayoutCtrl">
+<div ng-controller="NavBarLayoutCtrl" class="dontTouchMe">
   <md-toolbar md-scroll-shrink ng-if="true">
   <div class="md-toolbar-tools">
     <md-button ng-click="toggleSideNav()" class="md-icon-button" aria-label="Menu">
@@ -32,6 +32,9 @@
         </md-button>
         <md-button ng-click="closeSideNav()"class="btns" ng-link="['CreateAd']">
           <i class="material-icons">note_add</i>Create Advertisment
+        </md-button>
+        <md-button ng-click="closeSideNav()"class="btns" ng-link="['MyAds']">
+          <i class="material-icons">dns</i>My Advertisments
         </md-button>
         <md-button ng-click="closeSideNav()"class="btns">
           <i class="material-icons">settings</i>Settings

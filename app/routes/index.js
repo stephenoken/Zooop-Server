@@ -23,7 +23,10 @@ router.post('/signup',accountCtrl.signup);
 router.get('/logout', authCtrl.signout);
 
 router.get("/dashboard",auth.ensured,mainCtrl.showPage('dashboard'));
+
+
 router.post('/discover', adsCtrl.saveDiscoverAd());
+router.get('/discover', adsCtrl.getDiscoverAds());
 
 
 

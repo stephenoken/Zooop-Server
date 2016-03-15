@@ -12,6 +12,7 @@ function saveDiscoverAd () {
     return (req, res)=>{
     	var product = new prodAd(req.body);
     	res.send(product);	
+    	// Save the product and check for errors
     	product.save(function(err){
  			if(err){
  				console.log(err);
@@ -22,5 +23,18 @@ function saveDiscoverAd () {
 	};
 }
 
+function getDiscoverAds () {
+	return (req, res)=> {
+        var product = new prodAd();
+        prodAd.find(function(err, products) {
+        	if (err)
+        		res.send(err);
+
+        	res.json(products);
+        });
+	};
+}
+
 module.exports.sendAd = sendAd;
 module.exports.saveDiscoverAd = saveDiscoverAd;
+module.exports.getDiscoverAds = getDiscoverAds;
