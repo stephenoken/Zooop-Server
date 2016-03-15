@@ -11,7 +11,7 @@ function sendAd () {
 function saveDiscoverAd () {
     return (req, res)=>{
     	var product = new prodAd(req.body);
-    	res.send(product);	
+    	res.send(product);
     	// Save the product and check for errors
     	product.save(function(err){
  			if(err){
@@ -25,7 +25,6 @@ function saveDiscoverAd () {
 
 function getDiscoverAds () {
 	return (req, res)=> {
-        var product = new prodAd();
         prodAd.find(function(err, products) {
         	if (err)
         		res.send(err);

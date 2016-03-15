@@ -1,17 +1,18 @@
 module.exports = { name:"CreateAds",
-controller:["$scope","$http", function($scope, $http){
+controller:["$http", function($http){
 			// Creating a blank object to hold form information
-			$scope.discover = {}
-			$scope.submit = function() {
-          alert("Success");
+			this.dietaryTags = [];
+			this.submit = function(discover) {
            $http({
                  method  : 'POST',
                  url     : '/discover',
-                 data    :  $scope.discover,  
+                 data    :  ()=>{
+									 return Object.assign(discover,{dietaryTags:this.dietaryTags});
+								 }
             }).then(function successCallback(response){
                 console.log(response.status);
             }, function errorCallback(response){
                 console.log(response.status);
             });
-        }
+        };
 }]};

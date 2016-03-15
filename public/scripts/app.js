@@ -6,7 +6,7 @@ require('./controllers/index');
 require('./controllers/ui/navbar_layout');
 require('./components/index');
 
-const app = angular.module('zooopApp',['ngComponentRouter','ngTagsInput','ngMaterial','ZooopController','ZooopComponents']);
+const app = angular.module('zooopApp',['ngComponentRouter','ngMaterial','ZooopController','ZooopComponents']);
 
 app.config(["$mdThemingProvider",($mdThemingProvider)=>{
   $mdThemingProvider.theme('default').primaryPalette('light-blue',{
