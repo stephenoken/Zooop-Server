@@ -1,7 +1,7 @@
 "use strict";
 const Advertisment = require("./../models/advertisment");
 const mongoose = require('mongoose');
-const prodAd = mongoose.model('Advertisment');
+
 
 function sendAd () {
 	return (req,res)=>{
@@ -11,8 +11,9 @@ function sendAd () {
 
 function saveDiscoverAd () {
     return (req, res)=>{ 
-        var data = Object.assign(req.body,{"retailer_id":req.currentUser._id});
-    	//var product = new prodAd(req.body);
+        console.log(req.body);
+        var data = req.body;
+    	//var product = new Advertisment(req.body);
     	// Save the product and check for errors
     	Advertisment.create(data,function(err, advertisment){
  			if(err){
@@ -27,11 +28,12 @@ function saveDiscoverAd () {
 
 function getDiscoverAds () {
 	return (req, res)=> {
-        prodAd.find(function(err, products) {
+        Advertisment.find(function(err, products) {
         	if (err)
         		res.send(err);
 
-        	res.json(products);
+        	
+            res.json(products);
         });
 	};
 }

@@ -23,16 +23,16 @@ var AdSchema = new Schema({
     type: [],
     required: true
   },
-  img_url: {
+  imgUrl: {
     name: "imageUrl",
     type: String,
     required: false
   },
-  created_at: {
+  createdAt: {
     type: Date,
     default: Date.now
   },
-  retailer_id: {
+  retailerId: {
     type: String,
     required: true
   }

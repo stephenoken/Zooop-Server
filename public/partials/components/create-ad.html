@@ -8,6 +8,10 @@
         </div>
   			<div layout-gt-xs="row">
   				<md-input-container class="md-block" flex-gt-sm="">
+          <label>Type</label>
+          <input ng-model="discover.type" required>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="">
   				<label>Product name</label>
   				<input ng-model="discover.name" required>
   				</md-input-container>
@@ -18,12 +22,12 @@
   			</div>
         <h3>Product Properties</h3>
   			<div layout-gt-sm="row">
-  				<md-input-container class="md-block" flex-gt-xs="">
+  			<!--	<md-input-container class="md-block" flex-gt-xs="">
   				<label>Taste</label>
   				<input ng-model="discover.taste">
-  			    </md-input-container>
+  			    </md-input-container> -->
   			</div>
-        <md-chips ng-model="create.dietaryTags" placeholder="Enter a tag"></md-chips>
+        <md-chips ng-model="create.tags" placeholder="Enter a tag"></md-chips>
   			<!-- <md-input-container class="md-block">
   			    <tags-input ng-model="discover.dietaryTags" required class="ng-pristine ng-valid md-input ng-empty ng-touched"></tags-input>
 		    </md-input-container> -->
