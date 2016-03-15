@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var AdSchema = new Schema({
+  type:  {
+    type: String,
+    required: true,
+    unique: true
+  },
   name:  {
     type: String,
     required: true,
@@ -14,22 +19,22 @@ var AdSchema = new Schema({
     required: false,
     select: false
   },
-  taste:{
-    type: String,
-    required: false
-  },
-  dietaryTags:{
-    type: {},
+  tags:{
+    type: [],
     required: true
   },
-  image: {
+  img_url: {
     name: "imageUrl",
     type: String,
     required: false
   },
-  createdAt: {
+  created_at: {
     type: Date,
     default: Date.now
+  },
+  retailer_id: {
+    type: String,
+    required: true
   }
 });
 
