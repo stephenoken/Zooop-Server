@@ -14,12 +14,10 @@ var AdSchema = new Schema({
   },
   description: {
     type: String,
-    required: false,
-    select: false
+    required: true
   },
   tags:{
-    type: [],
-    required: true
+    type: []
   },
   imgUrl: {
     name: "imageUrl",
