@@ -6,11 +6,15 @@ const requireDir = require("require-dir");
 const _tasks = requireDir('./gulp_tasks');
 /*eslint-enable */
 
+function testTasks(){
+  gulp.watch("tests/**/*.js",["test"]);
+  gulp.watch("app/**/*",["test"]);
+  gulp.watch("public/**/*",["test"]);
+}
 function gulpTasks() {
   gulp.start("vendor_scripts");
   gulp.start("browser-sync");
-  gulp.watch("tests/**/*.js",["test"]);
-  gulp.watch("app/**/*",["test"]);
+  testTasks();
   gulp.watch("public/scss/**/*.scss",["styles"]);
   gulp.watch("public/scripts/**/*.js",["watch-js"]);
   gulp.watch("public/partials/**/*.html",["html"]);
@@ -27,4 +31,8 @@ gulp.task('prod',["styles","images","prod-build-js","vendor_scripts","html"],()=
 
 gulp.task('front-end',["start-node-server","styles","build-js","html"],()=>{
   gulpTasks();
+});
+
+gulp.task('watch-tests',["test"],()=>{
+  testTasks();
 });

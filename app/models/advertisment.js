@@ -35,4 +35,3 @@ var AdSchema = new Schema({
 
 // compile User model
 module.exports = mongoose.model('Advertisment', AdSchema);
-

@@ -6,9 +6,7 @@ controller:["$http", function($http){
            $http({
                  method  : 'POST',
                  url     : '/discover',
-                 data    :  ()=>{
-									 return Object.assign(discover,{dietaryTags:this.dietaryTags});
-								 }
+                 data    :  Object.assign(discover,{dietaryTags:this.dietaryTags})
             }).then(function successCallback(response){
                 console.log(response.status);
             }, function errorCallback(response){
