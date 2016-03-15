@@ -1,6 +1,6 @@
 "use strict";
 const Advertisment = require("./../models/advertisment");
-const mongoose = require('mongoose');
+const Retailer = require("./../models/user");
 
 
 function sendAd () {
@@ -10,7 +10,7 @@ function sendAd () {
 }
 
 function saveDiscoverAd () {
-    return (req, res)=>{ 
+    return (req, res)=>{
         console.log(req.body);
         var data = req.body;
     	//var product = new Advertisment(req.body);
@@ -28,12 +28,23 @@ function saveDiscoverAd () {
 
 function getDiscoverAds () {
 	return (req, res)=> {
-        Advertisment.find(function(err, products) {
+        Advertisment.find(function(err, adverts) {
         	if (err)
         		res.send(err);
 
-        	
-            res.json(products);
+						var discoverAds = adverts.map((advert)=>{
+							//  Retailer.findOne({_id:advert.retailerId},(err,retailer)=>{
+							//
+							// });
+							return{
+								adInfo: advert,
+								shopInfo:{
+									name: "Testing Bakeries",
+									coordinates: "53.3437651,-6.2505505999999995"
+								}
+							};
+						});
+            res.json(discoverAds);
         });
 	};
 }

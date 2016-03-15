@@ -6,13 +6,11 @@ const Schema = mongoose.Schema;
 var AdSchema = new Schema({
   type:  {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   name:  {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   description: {
     type: String,
