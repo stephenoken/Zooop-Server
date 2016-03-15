@@ -1,6 +1,6 @@
 module.exports = { name:"MyAds",
 controller:[ '$http', '$scope' ,function($http, $scope){
-		data =	$http({
+        data =	$http({
                  method  : 'GET',
                  url     : '/discover'
             }).then(function successCallback(response){
