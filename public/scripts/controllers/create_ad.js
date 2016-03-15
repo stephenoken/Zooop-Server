@@ -1,12 +1,13 @@
+var angular = require('angular');
 module.exports = { name:"CreateAds",
 controller:["$http", "$mdDialog", function($http, $mdDialog){
 			// Creating a blank object to hold form information
 			this.tags = [];
-			
+
             this.submit = function(discover) {
            $http({
                  method  : 'POST',
-                 url     : '/discover',
+                 url     : '/adverts-api/create-discover-ad',
                  data    :  Object.assign(discover,{tags:this.tags,retailerId:Retailer})
             }).then(function successCallback(response){
                 console.log(response.status);

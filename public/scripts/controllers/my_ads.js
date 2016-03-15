@@ -1,10 +1,10 @@
 module.exports = { name:"MyAds",
 controller:[ '$http', '$scope' ,function($http, $scope){
-         $scope.adsAvailable = false;
-        data =	$http({
+	$scope.adsAvailable = false;
+        	$http({
                  method  : 'GET',
-                 url     : '/discover'
-            }).then(function successCallback(response){
+                 url     : '/adverts-api/get-discover-ads'
+            }).then(function (response){
                 console.log(response.status);
                 $scope.discoverAds = response.data;
                  if ($scope.discoverAds === null){

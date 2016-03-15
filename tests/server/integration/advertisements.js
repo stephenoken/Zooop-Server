@@ -14,8 +14,8 @@ describe('Advertisements', function () {
 
   it('create ads', function (done) {
     request({
-      method: 'post',
-      url: `${baseUrl}/create-ad`,
+      method: 'POST',
+      url: `${baseUrl}/create-discover-ad`,
       form: {
         name:  "New Mocha",
         description: "Made with beas shipped all the way from Arabia",
