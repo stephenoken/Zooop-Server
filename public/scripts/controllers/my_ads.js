@@ -1,13 +1,13 @@
 module.exports = { name:"MyAds",
 controller:[ '$http', '$scope' ,function($http, $scope){
-		data =	$http({
+		$http({
                  method  : 'GET',
-                 url     : '/discover'
-            }).then(function successCallback(response){
+                 url     : '/adverts-api/get-discover-ads'
+            }).then(function (response){
                 console.log(response.status);
                 $scope.discoverAds = response.data;
                 console.log($scope.discoverAds);
-            }, function errorCallback(response){
+            }, function (response){
                 console.log(response.status);
             });
 }]};

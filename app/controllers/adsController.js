@@ -11,6 +11,8 @@ function sendAd () {
 
 function saveDiscoverAd () {
     return (req, res)=>{
+			console.log("Body");
+			console.log(req.body);
     	var product = new prodAd(req.body);
     	// Save the product and check for errors
     	product.save(function(err,prod){

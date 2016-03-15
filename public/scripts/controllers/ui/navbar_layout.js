@@ -7,6 +7,6 @@ module.exports = {
 
     $scope.closeSideNav = ()=>{
       $mdSidenav('side-menu-left').close();
-    }
+    };
   }]
 };

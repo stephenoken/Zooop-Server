@@ -4,9 +4,8 @@ const mainCtrl = require('./../controllers/main');
 const authCtrl = require("./../controllers/authentication");
 const auth = require('./../middleware/authentication');
 const accountCtrl = require('./../controllers/account');
-const router = express.Router();
-const adsCtrl = require("./../controllers/adsController");
 const prodCtrl = require('./../controllers/product');
+const router = express.Router();
 
 // router.get('/',mainCtrl.showPage('index',{title:'Zooop'}));
 router.get('/',mainCtrl.showPage('index',{title:"Zooop"}));
@@ -23,11 +22,6 @@ router.post('/signup',accountCtrl.signup);
 router.get('/logout', authCtrl.signout);
 
 router.get("/dashboard",auth.ensured,mainCtrl.showPage('dashboard'));
-
-
-router.post('/discover', adsCtrl.saveDiscoverAd());
-router.get('/discover', adsCtrl.getDiscoverAds());
-
 
 
 router.post('/myaction', prodCtrl.storeProduct());

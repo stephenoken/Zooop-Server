@@ -19,7 +19,7 @@ var AdSchema = new Schema({
     required: false
   },
   dietaryTags:{
-    type: {},
+    type: [String],
     required: true
   },
   image: {

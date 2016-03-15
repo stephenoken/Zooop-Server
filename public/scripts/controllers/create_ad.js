@@ -5,7 +5,7 @@ controller:["$http", function($http){
 			this.submit = function(discover) {
            $http({
                  method  : 'POST',
-                 url     : '/discover',
+                 url     : '/adverts-api/create-discover-ad',
                  data    :  Object.assign(discover,{dietaryTags:this.dietaryTags})
             }).then(function successCallback(response){
                 console.log(response.status);
