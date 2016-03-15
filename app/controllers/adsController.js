@@ -11,17 +11,16 @@ function sendAd () {
 
 function saveDiscoverAd () {
     return (req, res)=>{
-			console.log("Body");
-			console.log(req.body);
-    	var product = new prodAd(req.body);
+        var data = Object.assign(req.body,{"retailer_id":req.currentUser._id});
+    	//var product = new prodAd(req.body);
     	// Save the product and check for errors
-    	product.save(function(err,prod){
+    	Advertisment.create(data,function(err, advertisment){
  			if(err){
  				console.log(err);
  			}
- 			console.log("Product added");
-			console.log(prod);
-			res.send(prod);
+ 			console.log("Advertisment added");
+			console.log(advertisment);
+			res.send(advertisment);
  		});
 	};
 }

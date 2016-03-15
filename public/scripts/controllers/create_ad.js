@@ -1,8 +1,10 @@
+var angular = require('angular');
 module.exports = { name:"CreateAds",
-controller:["$http", function($http){
+controller:["$http", "$mdDialog", function($http, $mdDialog){
 			// Creating a blank object to hold form information
 			this.dietaryTags = [];
-			this.submit = function(discover) {
+
+            this.submit = function(discover) {
            $http({
                  method  : 'POST',
                  url     : '/adverts-api/create-discover-ad',
@@ -12,5 +14,18 @@ controller:["$http", function($http){
             }, function errorCallback(response){
                 console.log(response.status);
             });
+        };
+            this.showAlert = function(ev) {
+                console.log("success");
+                $mdDialog.show(
+                $mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .title('You Go, Captain!')
+                .textContent('You have created your Ad!! You can view it in My Ads')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('Got it!')
+                .targetEvent(ev)
+            );
         };
 }]};

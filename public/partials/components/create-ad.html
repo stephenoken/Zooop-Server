@@ -2,7 +2,7 @@
  <div flex-xs="100" flex="80" class="md-whiteframe-2dp card">
 	<md-content layout-padding="">
   	<div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage">
-  		<form name="discoverForm" ng-submit="create.submit(discover)" novalidate>
+  		<form name="discoverForm" ng-submit="create.submit(discover); create.showAlert($event)" novalidate>
         <div layout layout-align="center">
           <h1>Create Advertisement</h1>
         </div>
