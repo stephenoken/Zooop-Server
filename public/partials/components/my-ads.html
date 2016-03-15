@@ -1,5 +1,24 @@
 <div layout="row" layout-align="center" ng-controller="MyAds as ads">
-  <div flex-xs="100" flex="80" class="md-whiteframe-2dp card">
-      <h1>My Ads</h1>
+<div flex-xs="100" flex="80" class="md-whiteframe-2dp card">
+<div ng-cloak="" layout-gt-sm="row" layout="column" class="listdemoBasicUsage">
+
+  <div flex-gt-sm="50" flex="">
+        <h1>My Ads</h1>
+    <md-content>
+      <md-list flex="">
+        <md-subheader class="md-no-sticky">3 line item</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="discoverAd in discoverAds">
+          <!--<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}"> -->
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ discoverAd.name }}</h3>
+            <h4>{{ discoverAd.description }}</h4>
+            <p>{{ discoverAd.dietaryTags }}</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+       </md-list>
+    </md-content>
   </div>
+</div>
+</div>
 </div>
