@@ -33,18 +33,17 @@ function getDiscoverAds () {
         		res.send(err);
 
 						var discoverAds = adverts.map((advert)=>{
-							//  Retailer.findOne({_id:advert.retailerId},(err,retailer)=>{
-							//
-							// });
-							return{
-								adInfo: advert,
-								shopInfo:{
-									name: "Testing Bakeries",
-									coordinates: "53.3437651,-6.2505505999999995"
-								}
-							};
+							 Retailer.findOne({_id:advert.retailerId},(err,retailer)=>{
+								return {
+									adInfo: advert,
+									shopInfo:{
+										name: retailer.name,
+										coordinates: retailer.location
+									}
+								};
+								res.json(discoverAds);
+							});
 						});
-            res.json(discoverAds);
         });
 	};
 }
