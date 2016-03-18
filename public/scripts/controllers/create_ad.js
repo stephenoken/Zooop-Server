@@ -8,7 +8,7 @@ controller:["$http", "$mdDialog", function($http, $mdDialog){
            $http({
                  method  : 'POST',
                  url     : '/adverts-api/create-discover-ad',
-                 data    :  Object.assign(discover,{tags:this.tags,retailerId:Retailer})
+                 data    :  Object.assign(discover,{tags:this.tags})
             }).then(function successCallback(response){
                 console.log(response.status);
             }, function errorCallback(response){
