@@ -37,11 +37,12 @@ function getDiscoverAds () {
 								return {
 									adInfo: advert,
 									shopInfo:{
-										name: "Test",
-										coordinates: "32424535354563,14253535453"
+										name: req.name,
+										coordinates: req.location
 									}
 								};
 							});
+							console.log(discoverAds);
 							res.json(discoverAds);
 						});
         // });

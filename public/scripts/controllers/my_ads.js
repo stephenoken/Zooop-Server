@@ -7,7 +7,7 @@ controller:[ '$http', '$scope' ,function($http, $scope){
             }).then(function (response){
                 console.log(response.status);
                 $scope.prodAds = response.data;
-                console.log($scope.prodAds.length);
+                console.log($scope.prodAds);
                  if ($scope.prodAds.length == 0){
                     $scope.adsAvailable = false;
                     console.log("Ads are not available");

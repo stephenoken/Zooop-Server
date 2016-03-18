@@ -17,21 +17,23 @@ const userTestData = require('./../../fixtures/users');
 describe('Advertisement Model', function () {
   beforeEach(function (done) {
     userTestData.map((user)=>{
-      User.register(user,(err,u)=>{});
+      User.register(user);
     });
     done();
   });
 
-  afterEach(function (done) {
-    userTestData.map((user)=>{
-      User.remove({name:user.name},(err,u)=>{});
-    });
-    done();
-  });
+  // afterEach(function (done) {
+  //   userTestData.map((user)=>{
+  //     User.remove({name:user.name},(err,u)=>{});
+  //   });
+  //   done();
+  // });
 
   it('find test user', function (done) {
-    User.find({name:"Test User"},(err,user)=>{
-      expect(false).to.be.equal(true);
+    User.find({},(err,users)=>{
+      expect(users).not.to.be.undefined;
+      console.log(users);
+      expect(users[0].name).to.be.equal("Test User");
       done();
     });
   });

@@ -12,20 +12,21 @@ describe('Advertisements', function () {
 
   });
 
-  it('create ads', function (done) {
-    request({
-      method: 'POST',
-      url: `${baseUrl}/create-discover-ad`,
-      form: {
-        name:  "New Mocha",
-        description: "Made with beas shipped all the way from Arabia",
-        taste:"Bitter Sweet",
-        dietaryTags:["Coffee","Mocha"],
-        retailerId: "112345"
-      }
-    },(err, res, body)=>{
-      expect(res.statusCode).to.equal(200);
-      done();
-    });
-  });
+  // it('create ads', function (done) {
+  //   request({
+  //     method: 'POST',
+  //     url: `${baseUrl}/create-discover-ad`,
+  //     form: {
+  //       name:  "New Mocha",
+  //       description: "Made with beas shipped all the way from Arabia",
+  //       taste:"Bitter Sweet",
+  //       type: 'coffee',
+  //       dietaryTags:["Coffee","Mocha"],
+  //       retailerId: "112345"
+  //     }
+  //   },(err, res, body)=>{
+  //     expect(res.statusCode).to.equal(200);
+  //     done();
+  //   });
+  // });
 });
