@@ -63,7 +63,13 @@ describe('Advertisement Model', function () {
     });
   });
 
-  it('find retilaer of advertisements', function (done) {
-    done();
+  it('find retialer of advertisements', function (done) {
+    Advertisement.getAndroidAds((err,adverts)=>{
+      expect(adverts.length).to.be.equal(3);
+      const advert = adverts[0];
+      expect(advert.adInfo.name).to.have.equal('Advert1');
+      expect(advert.shopInfo).not.be.undefined;
+      done();
+    });
   });
 });

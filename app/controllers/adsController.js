@@ -37,6 +37,14 @@ function getDiscoverAds () {
 	};
 }
 
+function getAndroidAds() {
+	return(req,res)=>{
+		Advertisment.getAndroidAds((err,adverts)=>{
+			res.json(adverts);
+		});
+	};
+}
 module.exports.sendAd = sendAd;
 module.exports.saveDiscoverAd = saveDiscoverAd;
 module.exports.getDiscoverAds = getDiscoverAds;
+module.exports.getAndroidAds = getAndroidAds;
