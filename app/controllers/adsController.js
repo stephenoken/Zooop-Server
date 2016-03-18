@@ -33,18 +33,18 @@ function getDiscoverAds () {
         		res.send(err);
 
 						var discoverAds = adverts.map((advert)=>{
-							 Retailer.findOne({_id:advert.retailerId},(err,retailer)=>{
+						// 	 Retailer.findOne({_id:advert.retailerId},(err,retailer)=>{
 								return {
 									adInfo: advert,
 									shopInfo:{
-										name: retailer.name,
-										coordinates: retailer.location
+										name: "Test",
+										coordinates: "32424535354563,14253535453"
 									}
 								};
-								res.json(discoverAds);
 							});
+							res.json(discoverAds);
 						});
-        });
+        // });
 	};
 }
 
