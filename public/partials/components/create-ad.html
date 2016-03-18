@@ -1,36 +1,48 @@
-<div layout="row" layout-align="center">
+<div layout="row" layout-align="center" ng-controller="CreateAds as create">
  <div flex-xs="100" flex="80" class="md-whiteframe-2dp card">
-			<h1>Create Advertisement</h1>
-			<md-content layout-padding="">
-	<div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage">
-		<form name="discoverForm">
+	<md-content layout-padding="">
+  	<div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage">
+  		<form name="createAdForm" ng-submit="create.submit(prodAd); create.showAlert($event)" novalidate>
+        <div layout layout-align="center">
+          <h1>Create Advertisement</h1>
+        </div>
+  			<div layout-gt-xs="row">
+  				<md-input-container class="md-block">
+            <label>Advertisement Type</label>
+            <md-select name="type" ng-model="prodAd.type" required>
+            <md-option value="Discover">Discover</md-option>
+            <md-option value="Diggy">Diggy</md-option>
+          </md-select>
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="">
+  				<label>Product name</label>
+  				<input ng-model="prodAd.name" required>
+  				</md-input-container>
+  				<md-input-container class="md-block" flex-gt-xs="">
+  				<label>Description</label>
+  				<input ng-model="prodAd.description" required>
+  				</md-input-container>
+  			</div>
+        <h3>Product Properties</h3>
+  			<div layout-gt-sm="row">
+  			<!--	<md-input-container class="md-block" flex-gt-xs="">
+  				<label>Taste</label>
+  				<input ng-model="prodAd.taste">
+  			    </md-input-container> -->
+  			</div>
+        <md-chips ng-model="create.tags" required placeholder="Enter a tag"></md-chips>
+  			<!-- <md-input-container class="md-block">
+  			    <tags-input ng-model="prodAd.dietaryTags" required class="ng-pristine ng-valid md-input ng-empty ng-touched"></tags-input>
+		    </md-input-container> -->
 
-			<div layout-gt-xs="row">
-				<md-input-container class="md-block" flex-gt-xs="">
-				<label>Category</label>
-				<input ng-model="discover.category">
-				</md-input-container>
-				<md-input-container class="md-block" flex-gt-sm="">
-				<label>Product name</label>
-				<input ng-model="discover.name">
-				</md-input-container>
-			</div>
-                <h3>Product Properties</h3> 
-			<div layout-gt-sm="row">
-				<md-input-container class="md-block" flex-gt-xs="">
-				<label>Taste</label>
-				<input ng-model="discover.taste">
-			    </md-input-container>
-			    <md-input-container class="md-block" flex-gt-sm="">
-			    <label>Dietary Tags</label>
-			    <tags-input ng-model="discover.dietaryTags">
-		        </tags-input>
-		        </md-input-container>
-	        </div>
-        </form>
-    </div>
+
+  	        <md-button type="submit" class='md-primary md-raised'ng-disabled= "createAdForm.$invalid">Create</md-button>
+          </form>
+      <pre>
+      {{ prodAd }}
+     </pre>
+
+      </div>
     </md-content>
    </div>
-</div>   
-
-
+</div>

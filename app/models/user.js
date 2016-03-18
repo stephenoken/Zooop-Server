@@ -100,8 +100,6 @@ UserSchema.statics.register = function(opts, callback) {
     data.passwordSalt = salt;
 
     //create the user
-    console.log("User");
-    console.log(data);
     self.model('User').create(data, function(err, user) {
       if (err) {
         console.log(err);

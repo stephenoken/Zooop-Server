@@ -2,7 +2,7 @@
 
 const chai = require("chai");
 const expect = chai.expect;
-const bodyHelper = require("./../../../app/helpers/req_body");
+const bodyHelper = require("./../../../../app/helpers/req_body");
 
 describe('New User', function () {
   it('parse form body request', function () {

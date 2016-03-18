@@ -1,4 +1,8 @@
 $divider-colour: #B6B6B6;
+
+html,body{
+  background: #eaeaea !important;
+}
 .nav-logo{
   text-align: center;
   display: flex;
@@ -44,3 +48,8 @@ $divider-colour: #B6B6B6;
     }
   }
 }
+
+.dontTouchMe {
+  margin-bottom:  30px;
+}
+

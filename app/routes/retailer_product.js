@@ -2,13 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-const DiscProdController = require("./../controllers/discover_product");
+const RetailerProdController = require("./../controllers/retailer_product");
 /*
 {
 product:@name,
 retailerId:@_id
 }
 */
-router.post('/new',DiscProdController.newDiscoverProduct());
+router.post('/new',RetailerProdController.newRetailerProduct());
 
 module.exports = router;
