@@ -30,23 +30,10 @@ function saveDiscoverAd () {
 
 function getDiscoverAds () {
 	return (req, res)=> {
-        Advertisment.find({ 'retailerId': req.user._id}, function(err, adverts) {
-        	if (err)
-        		res.send(err);
-
-						var discoverAds = adverts.map((advert)=>{
-								return {
-									adInfo: advert,
-									shopInfo:{
-										name: req.name,
-										coordinates: req.location
-									}
-								};
-							});
-							console.log(discoverAds);
-							res.json(discoverAds);
-						});
-        // });
+		Advertisment.getRetialerAds(req.user._id,(err,adverts)=>{
+			if(err)res.send(err);
+			res.json(adverts);
+		});
 	};
 }
 

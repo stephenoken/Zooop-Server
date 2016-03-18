@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const User = require("./user");
 var AdSchema = new Schema({
   type:  {
     type: String,
@@ -34,5 +35,23 @@ var AdSchema = new Schema({
   }
 });
 
+AdSchema.statics.getRetialerAds = function (id,callback) {
+  this.find({'retailerId':id},(err,adverts) => {
+    if(err) callback(err,null);
+    User.find({_id:id},(userErr,user)=>{
+      const advertResults = adverts.map((advert)=>{
+        return {
+          adInfo: advert,
+          shopInfo:{
+            name: user.name,
+            coordinates: user.location
+          }
+        };
+      });
+      callback(err,advertResults);
+    });
+  });
+};
+
 // compile User model
-module.exports = mongoose.model('Advertisment', AdSchema);
+module.exports = mongoose.model('Advertisement', AdSchema);

@@ -10,14 +10,18 @@ mongoose.connect(config.mongodb.uri);
 
 //Models
 const User = require("./../../../../app/models/user");
-const Advertisements = require("./../../../../app/models/advertisment");
+const Advertisement = require("./../../../../app/models/advertisment");
 
 //Test data
 const userTestData = require('./../../fixtures/users');
+const advertTestData = require('./../../fixtures/advertisements');
 describe('Advertisement Model', function () {
   beforeEach(function (done) {
     userTestData.map((user)=>{
       User.create(user);
+    });
+    advertTestData.map((advert)=>{
+      Advertisement.create(advert);
     });
     done();
   });
@@ -25,6 +29,9 @@ describe('Advertisement Model', function () {
   afterEach(function (done) {
     userTestData.map((user)=>{
       User.remove({name:user.name},()=>{});
+    });
+    advertTestData.map((advert)=>{
+      Advertisement.remove(advert,()=>{});
     });
     done();
   });
@@ -37,8 +44,26 @@ describe('Advertisement Model', function () {
     });
   });
 
-  it('find advertisement that belongs to retailer', function (done) {
+  it('find adverts', function (done) {
+    Advertisement.find({},(err,adverts)=>{
+      expect(adverts.length).to.be.equal(3);
+      done();
+    });
+  });
 
+  it('find advertisement that belongs to retailer', function (done) {
+    Advertisement.getRetialerAds("554b6fe1a42e7bbc1e932344",(err,adverts)=>{
+      expect(adverts).to.be.array;
+      expect(adverts.length).to.be.equal(2);
+
+      const advert = adverts[0];
+      expect(advert.adInfo.name).to.have.equal('Advert1');
+      expect(advert.shopInfo).not.be.undefined;
+      done();
+    });
+  });
+
+  it('find retilaer of advertisements', function (done) {
     done();
   });
 });
