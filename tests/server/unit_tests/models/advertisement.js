@@ -66,9 +66,10 @@ describe('Advertisement Model', function () {
   it('find retialer of advertisements', function (done) {
     Advertisement.getAndroidAds((err,adverts)=>{
       expect(adverts.length).to.be.equal(3);
-      const advert = adverts[0];
+      const advert = adverts[2];
       expect(advert.adInfo.name).to.have.equal('Advert1');
       expect(advert.shopInfo).not.be.undefined;
+      console.log(advert.shopInfo);
       done();
     });
   });

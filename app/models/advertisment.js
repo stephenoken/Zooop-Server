@@ -63,12 +63,13 @@ AdSchema.statics.getAndroidAds= function(callback){
       const results = adverts.map((advert)=>{
         return {
           adInfo:advert,
-          shopInfo:retailers.reduce(
+          //Filters the array and return the first element
+          shopInfo:retailers.filter(
             (retailer)=>{return retailer._id == advert.retailerId;}
-          )
+          )[0]
         };
       });
-      console.log(results);
+      // console.log(results);
       callback(advertErr,results,userErr);
     });
   });
