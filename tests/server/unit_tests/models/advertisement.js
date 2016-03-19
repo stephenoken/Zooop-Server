@@ -55,9 +55,8 @@ describe('Advertisement Model', function () {
     Advertisement.getRetialerAds("554b6fe1a42e7bbc1e932344",(err,adverts)=>{
       expect(adverts).to.be.array;
       expect(adverts.length).to.be.equal(2);
-
       const advert = adverts[0];
-      expect(advert.adInfo.name).to.have.equal('Advert1');
+      expect(advert.adInfo.name).to.equal('Advert1');
       expect(advert.shopInfo).not.be.undefined;
       done();
     });
@@ -66,10 +65,10 @@ describe('Advertisement Model', function () {
   it('find retialer of advertisements', function (done) {
     Advertisement.getAndroidAds((err,adverts)=>{
       expect(adverts.length).to.be.equal(3);
-      const advert = adverts[2];
+      const advert = adverts[0];
       expect(advert.adInfo.name).to.have.equal('Advert1');
       expect(advert.shopInfo).not.be.undefined;
-      console.log(advert.shopInfo);
+      expect(advert.shopInfo.name).to.equal("Test User");
       done();
     });
   });
