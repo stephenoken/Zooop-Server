@@ -110,14 +110,15 @@
   function getLocation() {
     if(navigator.getLocation){
       navigator.geolocation.getCurrentPosition(showPosition);
+    }else{
+      var position = {
+        coords: {
+          latitude: 53.3437651,
+          longitude: -6.2505505999999995
+        }
+      };
+      showPosition(position);
     }
-    var position = {
-      coords: {
-        latitude: 53.3437651,
-        longitude: -6.2505505999999995
-      }
-    };
-    showPosition(position);
   }
   function showPosition(position) {
     inputLocation.value = position.coords.latitude + "," + position.coords.longitude;

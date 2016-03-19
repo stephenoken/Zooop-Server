@@ -35,7 +35,7 @@ class DiggyBot {
 				}
 			}
 		}
-		return null
+		return null;
 	}
 
 	findCasualQuestion(input) {
@@ -47,26 +47,26 @@ class DiggyBot {
 				return casual[ii];
 			}
 		}
-		return null
+		return null;
 	}
 
 	generateOriginResponse(origin) {
-		var rR = Math.floor(Math.random() * origin.restaurants.length)
+		var rR = Math.floor(Math.random() * origin.restaurants.length);
 		var restaurant = origin.restaurants[rR];
 
 		var options = ["😄  Why don't you try ", "👌  You might like ", "👍  I can recommned ", " is super awesome 😍"];
-		var oR = Math.floor(Math.random() * options.length)
+		var oR = Math.floor(Math.random() * options.length);
 
 		if(oR > 2) {
 			return restaurant + options[oR];
-		} 
+		}
 		else {
 			return options[oR] + restaurant;
 		}
 	}
 
 	generateCasualResponse(casual) {
-		var rR = Math.floor(Math.random() * casual.responds.length)
+		var rR = Math.floor(Math.random() * casual.responds.length);
 		var response = casual.responds[rR];
 		return response;
 	}
