@@ -4,7 +4,23 @@ const retailerProduct = require("./../models/retailer_product");
 var mongoose = require('mongoose');
 function searchMasterProducts(object){
   Product.findOne({name:object.name},function(err, doc) {
-        saveDiscoverProduct(doc, object.retailerId)
+        retailerProduct.findOne({name:object.name}, function(error,documen){
+          if(documen != undefined)
+          {
+              console.log('Document already stored in store');
+          }
+          else {
+               if(doc != undefined)
+               {
+                  saveDiscoverProduct(doc, object.retailerId)
+               }
+               else {
+                 console.log('Details not found in master product store!!');
+               }
+
+          }
+        });
+
   });
 }
 
