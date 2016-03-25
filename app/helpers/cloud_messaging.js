@@ -1,32 +1,3 @@
-// 'use strict';
-//
-// var request = require('request');
-// const config = require('./../../config/index');
-// const options = {
-//   url: 'https://gcm-http.googleapis.com/gcm/send',
-//   method:"POST",
-//   headers:[
-//     {
-//       name: 'Authorization',
-//       value: `key=${config.googleAPIKey}`
-//     },
-//     {
-//       name: 'Content-Type',
-//       value: 'application/json'
-//     }
-//   ]
-// };
-// console.log(config.googleAPIKey);
-// function execute(body,cb) {
-//   request.post(options,{form:body},cb);
-// }
-//
-// execute({Hello:"World"},(error, response, body)=>{
-//   console.log(error);
-//   // console.log(response);
-//   console.log(body);
-// });
-
 'use strict';
 const gcm = require('node-gcm');
 const config = require('./../../config/index');
