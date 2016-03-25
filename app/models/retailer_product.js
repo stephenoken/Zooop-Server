@@ -28,4 +28,4 @@ var DiscoverProduct = new Schema({
 	}
 });
 
-module.exports = mongoose.model('DsicoverProduct',DiscoverProduct);
+module.exports = mongoose.model('DiscoverProduct',DiscoverProduct);
