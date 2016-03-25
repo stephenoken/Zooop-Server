@@ -10,19 +10,15 @@ function sendAd () {
 }
 
 function saveDiscoverAd () {
+
     return (req, res)=>{
         console.log(req.body);
         // var data = req.body;
         var data = Object.assign(req.body,{retailerId:req.user._id});
-    	console.log(data);
-    	//var product = new Advertisment(req.body);
-    	// Save the product and check for errors
     	Advertisment.create(data,function(err, advertisment){
  			if(err){
  				console.log(err);
  			}
- 			console.log("Advertisment added");
-			console.log(advertisment);
 			res.send(advertisment);
  		});
 	};

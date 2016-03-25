@@ -1,4 +1,4 @@
-<div layout="row" layout-align="center" >
+<div layout="row" layout-align="center" ng-controller="uploadCatalogue as uploadCatalogue">
   <div flex-xs="100" flex="80" class="md-whiteframe-2dp card">
   <form name="createSessions">
    <md-content layout-padding="">
@@ -8,25 +8,29 @@
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex-gt-xs="">
             <label>Product Name</label>
-            <input ng-model="train.name">
+            <input ng-model="catalogue.name">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="">
             <label>Price</label>
-            <input name="postalCode" ng-model="train.price" placeholder="$ 1" required="true">
+            <input name="postalCode" ng-model="catalogue.price" placeholder="$ 1" required="true">
             </md-input-container>
         </div>
         <md-input-container class="md-block">
-          <label>Cuisene</label>
-          <input ng-model="train.cuisene">
+          <label>Cuisine</label>
+          <input ng-model="catalogue.cuisine">
         </md-input-container>
         <div layout-gt-sm="row">
 
         </div>
         <md-input-container class="md-block">
           <label>Description</label>
-          <textarea ng-model="train.description" md-maxlength="150" rows="5" md-select-on-focus=""></textarea>
+          <textarea ng-model="catalogue.description" md-maxlength="150" rows="5" md-select-on-focus=""></textarea>
         </md-input-container>
-        <md-button class="md-raised md-primary">Submit</md-button>
+		<md-input-container class="md-block">
+          <label>Upload file</label>
+		  <input type="file" file-model="catalogue.upload"/>
+        </md-input-container>{{catalogue}}
+        <md-button ng-click="uploadCatalogue.submit(catalogue)" class="md-raised md-primary">Submit</md-button>
     </form>
 </div>
 </md-content>

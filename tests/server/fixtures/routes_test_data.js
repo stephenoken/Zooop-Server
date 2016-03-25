@@ -17,5 +17,14 @@ module.exports = {
   discoverSearch: {
     latitude:"53.3444",
     longitude: "6.2577"
+  },
+  clientData:{
+    name: 'Harpreet Harpitson',
+    preferences: 'value',
+    _id: 'bfjdslggklgsljkdbflkshflfufhwur9313gkfd'
+  },
+  clientDataFailure:{
+    name: 'Harpreet Harpitson',
+    _id: 'bfjdslggklgsljkdbflkshflfufhwur9313gkfd'
   }
 };

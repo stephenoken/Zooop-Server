@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var DiscoverProduct = new Schema({
-  category: {
-		type: String,
-		required: true
-	},
+  retailerId: {
+    type: String,
+    required: true
+  },
 	name: {
 		type: String,
         required: true
@@ -21,11 +21,11 @@ var DiscoverProduct = new Schema({
 			type: [String],
 			required: true
 		},
-    retailerId: {
-      type: String,
-      required: true
-    }
+    category: {
+  		type: String,
+  		required: true
+  	}
 	}
 });
 
-module.exports = mongoose.model('DsicoverProduct',DiscoverProduct);
+module.exports = mongoose.model('DiscoverProduct',DiscoverProduct);
