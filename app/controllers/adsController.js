@@ -10,6 +10,7 @@ function sendAd () {
 }
 
 function saveDiscoverAd () {
+
     return (req, res)=>{
         console.log(req.body);
         // var data = req.body;

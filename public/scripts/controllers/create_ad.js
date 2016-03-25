@@ -13,7 +13,7 @@ controller:["$http", "$mdDialog", function($http, $mdDialog){
                 console.log(response.status);
             }, function errorCallback(response){
                 console.log(response.status);
-            });
+            });						
         };
             this.showAlert = function(ev) {
                 console.log("success");
