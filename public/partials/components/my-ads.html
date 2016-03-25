@@ -13,8 +13,9 @@
           <md-divider></md-divider>
           <div class="md-list-item-text" layout="column">
             <h4>Channel: {{prodAd.adInfo.type}}</h4>
-            <h3>{{ prodAd.adInfo.name }} </h3>
+            <h3>{{ prodAd.adInfo.name }}</h3>
             <h4>{{ prodAd.adInfo.description }}</h4>
+            <img ng-src="{{prodAd.adInfo.imgUrl}}" height="60" width="60"/>
             <p ng-repeat="tag in prodAd.adInfo.tags">#{{ tag }}</p>
           </div>
         </md-list-item>
