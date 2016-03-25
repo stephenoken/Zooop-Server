@@ -23,7 +23,7 @@ var AdSchema = new Schema({
   imgUrl: {
     name: "imageUrl",
     type: String,
-    required: false
+    required: true
   },
   createdAt: {
     type: Date,
