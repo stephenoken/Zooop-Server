@@ -35,7 +35,7 @@ describe('Advertisement Model', function () {
     });
     done();
   });
-
+ 
   it('find test user', function (done) {
     User.find({_id:"554b6fe1a42e7bbc1e932344"},(err,users)=>{
       expect(users).not.to.be.undefined;
