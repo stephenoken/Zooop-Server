@@ -3,14 +3,17 @@ class DiggyBot {
 
 	react(input){
 		var response = "42";
-		var words = this.extractWords(input);
+
+		var lowercaseInput = input.toLowerCase()
+
+		var words = this.extractWords(lowercaseInput);
 		var origin = this.findOriginQuestion(words);
 
 		if(origin != null) {
 			return this.generateOriginResponse(origin);
 		}
 		else {
-			var casual = this.findCasualQuestion(input).toLowerCase();
+			var casual = this.findCasualQuestion(lowercaseInput);
 			if(casual != null) {
 				return this.generateCasualResponse(casual);
 			}
@@ -20,7 +23,7 @@ class DiggyBot {
 	}
 
 	extractWords(string) {
-		var words = string.toLowerCase().split(" ");
+		var words = string.split(" ");
 		return words;
 	}
 
@@ -54,7 +57,7 @@ class DiggyBot {
 		var rR = Math.floor(Math.random() * origin.restaurants.length);
 		var restaurant = origin.restaurants[rR];
 
-		var options = ["😄  Why don't you try ", "👌  You might like ", "👍  I can recommned ", " is super awesome 😍"];
+		var options = ["😄  Why don't you try ", "👌  You might like ", "👍  I can recommend ", " is super awesome 😍"];
 		var oR = Math.floor(Math.random() * options.length);
 
 		if(oR > 2) {
