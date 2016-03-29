@@ -54,7 +54,7 @@ class DiggyBot {
 		var rR = Math.floor(Math.random() * origin.restaurants.length);
 		var restaurant = origin.restaurants[rR];
 
-		var options = ["😄  Why don't you try ", "👌  You might like ", "👍  I can recommned ", " is super awesome 😍"];
+		var options = ["😄  Why don't you try ", "👌  You might like ", "👍  I can recommend ", " is super awesome 😍"];
 		var oR = Math.floor(Math.random() * options.length);
 
 		if(oR > 2) {
