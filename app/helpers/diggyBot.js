@@ -90,6 +90,9 @@ class DiggyBot {
 
 		casuals.push(new Casual("how( is it going| are you)", ["I'm doing fine!😬 How are you?", "Not too bad! You?", "Ough... dude! Fuckin' hangovered😖"]));
 		casuals.push(new Casual("what('s up| is up| is going on|'s the craic)", ["Nothin'", "silencio, dude!"]));
+		casuals.push(new Casual("hi", ["hey 😄", "what's up dude"]));
+		casuals.push(new Casual("fuck you", ["But why?? 😥"]));
+		casuals.push(new Casual("who is the most awesome person?", ["Michael, of course 😄"]));
 
 		return casuals;
 	}
