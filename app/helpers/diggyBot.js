@@ -10,7 +10,7 @@ class DiggyBot {
 			return this.generateOriginResponse(origin);
 		}
 		else {
-			var casual = this.findCasualQuestion(input);
+			var casual = this.findCasualQuestion(input).toLowerCase();
 			if(casual != null) {
 				return this.generateCasualResponse(casual);
 			}
