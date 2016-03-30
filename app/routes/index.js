@@ -5,6 +5,11 @@ const authCtrl = require("./../controllers/authentication");
 const auth = require('./../middleware/authentication');
 const accountCtrl = require('./../controllers/account');
 const prodCtrl = require('./../controllers/product');
+
+
+const teachCtrl = require('./../controllers/teacher')
+
+
 const router = express.Router();
 
 // router.get('/',mainCtrl.showPage('index',{title:'Zooop'}));
@@ -25,5 +30,8 @@ router.get("/dashboard",auth.ensured,mainCtrl.showPage('dashboard'));
 
 
 router.post('/myaction', prodCtrl.storeProduct());
+
+
+router.post('/teachDiggy', teachCtrl.teachDiggy());
 
 module.exports = router;

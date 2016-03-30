@@ -6,6 +6,7 @@ const authRoutes = require('./../app/routes/authentication');
 const retailerProdRoutes = require('./../app/routes/retailer_product');
 const advertismentRoutes = require("./../app/routes/advertisement");
 const clientRoutes = require("./../app/routes/client");
+const teachRoutes = require("./../app/routes/teach");
 
 module.exports.init = (app)=>{
   app.use('/', indexRoutes);
@@ -14,4 +15,5 @@ module.exports.init = (app)=>{
   app.use('/retailer-product',retailerProdRoutes);
   app.use('/adverts-api',advertismentRoutes);
   app.use('/clients',clientRoutes);
+  app.use('/',teachRoutes);
 };
