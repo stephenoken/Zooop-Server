@@ -15,6 +15,7 @@ function generateDiggy(data,tags,cb) {
   mongoose.model("Client").find({},(err,clients)=>{
     const interestedClients = clients.filter((client) => {return _.intersection(client.preferences,tags).length > 0;});
     const regTokens = interestedClients.map((client) => {return client._id;});
+    console.log(`RegTokens ${regTokens}`);
     sender.send(message, regTokens, function (err, response) {
       if(err) {
         cb(err,null);
