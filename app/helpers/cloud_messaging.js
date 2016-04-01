@@ -12,9 +12,9 @@ function generateDiggy(data,tags,cb) {
   message.addData(data);
 
   var sender = new gcm.Sender(config.googleAPIKey);
-  console.log(tags);
   mongoose.model("Client").find({},(err,clients)=>{
-    const regTokens = clients.filter((client) => {return _.intersection(client.preferences,tags).length > 0;}).map((client) => {return client._id;});
+    const interestedClients = clients.filter((client) => {return _.intersection(client.preferences,tags).length > 0;});
+    const regTokens = interestedClients.map((client) => {return client._id;});
     sender.send(message, regTokens, function (err, response) {
       if(err) {
         cb(err,null);
