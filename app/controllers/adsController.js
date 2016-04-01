@@ -1,7 +1,7 @@
 "use strict";
 const Advertisment = require("./../models/advertisment");
 const Retailer = require("./../models/user");
-
+const GCM = require('./../helpers/cloud_messaging');
 
 function sendAd () {
 	return (req,res)=>{
@@ -12,14 +12,21 @@ function sendAd () {
 function saveDiscoverAd () {
 
     return (req, res)=>{
-        console.log(req.body);
         // var data = req.body;
         var data = Object.assign(req.body,{retailerId:req.user._id});
     	Advertisment.create(data,function(err, advertisment){
  			if(err){
  				console.log(err);
  			}
-			res.send(advertisment);
+			if (advertisment.type == "Diggy") {
+				console.log("Sending Notification");
+				GCM.generateDiggy({message:advertisment.description},["dENd5zZ-Ki0:APA91bHp1JUd2xhzMtR1JJDWA0Gk2OyJuM755iQRQkx37HZ95Y2_Uc14AgOAj68uHSffQ4C7liPck8Jwkb2ALe_noj8MJx94I8TftLRTTcTh_ryEV0LichvqEv7br9KLIasFrlS4Kaxf"],(err,response)=>{
+					res.send(response);
+				});
+			}else{
+				res.send(advertisment);
+
+			}
  		});
 	};
 }
