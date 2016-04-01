@@ -20,7 +20,7 @@ function saveDiscoverAd () {
  			}
 			if (advertisment.type == "Diggy") {
 				console.log("Sending Notification");
-				GCM.generateDiggy({message:advertisment.description},["dENd5zZ-Ki0:APA91bHp1JUd2xhzMtR1JJDWA0Gk2OyJuM755iQRQkx37HZ95Y2_Uc14AgOAj68uHSffQ4C7liPck8Jwkb2ALe_noj8MJx94I8TftLRTTcTh_ryEV0LichvqEv7br9KLIasFrlS4Kaxf"],(err,response)=>{
+				GCM.generateDiggy({message:advertisment.description},{tags:advertisment.tags},(err,response)=>{
 					res.send(response);
 				});
 			}else{
