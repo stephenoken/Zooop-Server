@@ -10,7 +10,7 @@ function generateDiggy(data,tags,cb) {
   message.addNotification('icon', 'ic_launcher');
   message.addNotification('body', 'World');
   message.addData(data);
-
+  console.log(tags.tags);
   var sender = new gcm.Sender(config.googleAPIKey);
   mongoose.model("Client").find({},(err,clients)=>{
     const interestedClients = clients.filter((client) => {return _.intersection(client.preferences,tags).length > 0;});
