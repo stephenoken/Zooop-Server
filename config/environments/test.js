@@ -5,5 +5,5 @@ module.exports = {
   mongodb: {
     uri: 'mongodb://localhost/zooop-test'
   },
-  googleAPIKey:'AIzaSyAE36hHZJEtECBiyhiifulSt2JRQ6elLlw'
+  googleAPIKey:'AIzaSyB05uh12_jnliPrHVC_cv8-1w87qpjKe3M'
 };

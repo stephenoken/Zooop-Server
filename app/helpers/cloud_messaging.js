@@ -2,7 +2,7 @@
 const gcm = require('node-gcm');
 const config = require('./../../config/index');
 
-function generateDiggy(data,regTokens) {
+function generateDiggy(data,regTokens,cb) {
   var message = new gcm.Message();
   message.addNotification('title', 'Hello');
   message.addNotification('icon', 'ic_launcher');
@@ -13,11 +13,11 @@ function generateDiggy(data,regTokens) {
 
   sender.send(message, regTokens, function (err, response) {
     if(err) {
-      console.error(err);
+      cb(err,null);
     } else {
-      console.log(response);
+      cb(err,response);
     }
   });
 }
-generateDiggy({"Data1":"Info1"},["bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1"]);
-module.exports = generateDiggy;
+// generateDiggy({"message": "This is your server"},["dENd5zZ-Ki0:APA91bHp1JUd2xhzMtR1JJDWA0Gk2OyJuM755iQRQkx37HZ95Y2_Uc14AgOAj68uHSffQ4C7liPck8Jwkb2ALe_noj8MJx94I8TftLRTTcTh_ryEV0LichvqEv7br9KLIasFrlS4Kaxf"]);
+module.exports.generateDiggy = generateDiggy;
