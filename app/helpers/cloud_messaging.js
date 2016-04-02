@@ -1,20 +1,19 @@
 'use strict';
 const gcm = require('node-gcm');
 const config = require('./../../config/index');
-const mongoose = require('mongoose');
+const Client = require('./../models/client');
 var _ = require('lodash');
 
-function generateDiggy(data,tags,cb) {
+function generateDiggy(data,preferences,cb) {
   var message = new gcm.Message();
   message.addNotification('title', 'Hello');
   message.addNotification('icon', 'ic_launcher');
   message.addNotification('body', 'World');
   message.addData(data);
-  console.log(tags.tags);
+  console.log(preferences.tags);
   var sender = new gcm.Sender(config.googleAPIKey);
-  mongoose.model("Client").find({},(err,clients)=>{
-    const interestedClients = clients.filter((client) => {return _.intersection(client.preferences,tags).length > 0;});
-    const regTokens = interestedClients.map((client) => {return client._id;});
+  Client.find({},(err,clients)=>{
+    const regTokens = clients.filter((client) => {return _.intersection(client.preferences,preferences.tags).length > 0;}).map((client) => {return client._id;});
     console.log(`RegTokens ${regTokens}`);
     sender.send(message, regTokens, function (err, response) {
       if(err) {

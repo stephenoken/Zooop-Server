@@ -7,11 +7,8 @@ const expect = chai.expect;
 const gcm = require('./../../../../app/helpers/cloud_messaging');
 const testMessage = require("./../../fixtures/gcm_messages");
 const clientTestData = require("./../../fixtures/clients");
-// const mongoose = require("mongoose");
-// const config = require("./../../../../config/index");
 const Client = require("./../../../../app/models/client");
 
-// mongoose.connect(config.mongodb.uri);
 
 describe('GCM', function () {
   beforeEach(function (done) {
@@ -36,7 +33,7 @@ describe('GCM', function () {
     });
   });
   it('send GCM message to specific user', function (done) {
-    gcm.generateDiggy(testMessage,['Mexican'],(err,response)=>{
+    gcm.generateDiggy(testMessage,{tags:['Mexican']},(err,response)=>{
       expect(response).not.to.be.null;
       expect(response.success).to.be.equal(1);
       expect(response.failure).to.be.equal(1);
