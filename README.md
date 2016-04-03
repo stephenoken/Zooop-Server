@@ -7,12 +7,12 @@ Sever Side Application
 - Install `MongoDB`
 - Install `Node` and `NPM` (Node comes bundled with NPM)
 - Install `GIT`
-- Run `npm i -g nodemon gulp-cli` to install and make `gulp` and `nodemon` globally available
+- Run ` $ npm i -g nodemon gulp-cli` to install and make `gulp` and `nodemon` globally available
 - Clone the project `https://github.com/stephenoken/Zooop-Server.git`
 
 ## Run Server Locally
 - Run `sudo mongod` or `mongod` to start the mongo server locally
-- Run `npm i` to download project dependancies
+- cd into Zooop-Server and run `npm i` to download project dependancies
 - Run `gulp` or either the shell/bash scripts.
 
 ## Deploying Server

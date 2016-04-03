@@ -2,7 +2,7 @@
 class DiggyBot {
 
 	react(input){
-		var response = "42";
+		var response = "Death to Tesco";
 
 		var lowercaseInput = input.toLowerCase()
 
