@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zooop-server by stephenoken</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Zooop-server</h1>
+      <h2 class="project-tagline">Sever Side Application </h2>
+      <a href="https://github.com/stephenoken/Zooop-Server" class="btn">View on GitHub</a>
+      <a href="https://github.com/stephenoken/Zooop-Server/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/stephenoken/Zooop-Server/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="zooop-server" class="anchor" href="#zooop-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zooop-Server</h1>
+
+<p>Sever Side Application
+<a href="http://www.zooop.xyz/">Zooop</a></p>
+
+<h2>
+<a id="perquisite--technologies" class="anchor" href="#perquisite--technologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Perquisite  Technologies</h2>
+
+<ul>
+<li>Requires an internet connection</li>
+<li>Install <code>MongoDB</code>
+</li>
+<li>Install <code>Node</code> and <code>NPM</code> (Node comes bundled with NPM)</li>
+<li>Install <code>GIT</code>
+</li>
+<li>Run <code>$ npm i -g nodemon gulp-cli</code> to install and make <code>gulp</code> and <code>nodemon</code> globally available</li>
+<li>Clone the project <code>https://github.com/stephenoken/Zooop-Server.git</code>
+</li>
+</ul>
+
+<h2>
+<a id="run-server-locally" class="anchor" href="#run-server-locally" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run Server Locally</h2>
+
+<ul>
+<li>Run <code>sudo mongod</code> or <code>mongod</code> to start the mongo server locally</li>
+<li>cd into Zooop-Server and run <code>npm i</code> to download project dependancies</li>
+<li>Run <code>gulp</code> or either the shell/bash scripts.</li>
+</ul>
+
+<h2>
+<a id="deploying-server" class="anchor" href="#deploying-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deploying Server</h2>
+
+<ul>
+<li>Add a new git remote <code>heroku</code> and assign this url <code>https://git.heroku.com/nameless-escarpment-38075.git</code>
+</li>
+<li>Push the master branch of your local copy to the master of the <code>heroku</code> remote</li>
+</ul>
+
+<h2>
+<a id="development-environment" class="anchor" href="#development-environment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development Environment</h2>
+
+<ul>
+<li>Atom Text Editor</li>
+<li>Sublime Text Editor</li>
+<li>Unix Terminal (with zsh)</li>
+<li>ESLint</li>
+</ul>
+
+<h2>
+<a id="project-structure" class="anchor" href="#project-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Structure</h2>
+
+<p>The structure of the project:</p>
+
+<pre><code>.
+├── Procfile
+├── README.md
+├── app
+│   ├── controllers
+│   │   ├── account.js
+│   │   ├── adsController.js
+│   │   ├── authentication.js
+│   │   ├── client.js
+│   │   ├── main.js
+│   │   ├── product.js
+│   │   └── retailer_product.js
+│   ├── helpers
+│   │   ├── catalogue.js
+│   │   ├── cloud_messaging.js
+│   │   ├── diggyBot.js
+│   │   ├── master_product_helper.js
+│   │   ├── password.js
+│   │   └── req_body.js
+│   ├── middleware
+│   │   └── authentication.js
+│   ├── models
+│   │   ├── advertisment.js
+│   │   ├── client.js
+│   │   ├── master_product.js
+│   │   ├── retailer_product.js
+│   │   ├── schema.js
+│   │   └── user.js
+│   ├── routes
+│   │   ├── advertisement.js
+│   │   ├── api.js
+│   │   ├── authentication.js
+│   │   ├── client.js
+│   │   ├── index.js
+│   │   └── retailer_product.js
+│   └── views
+│       ├── addProduct.ejs
+│       ├── dashboard.ejs
+│       ├── index.ejs
+│       └── login.ejs
+├── config
+│   ├── environments
+│   │   ├── development.js
+│   │   ├── production.js
+│   │   └── test.js
+│   ├── index.js
+│   ├── models.js
+│   ├── mongoose.js
+│   ├── passport.js
+│   ├── routes.js
+│   ├── seed
+│   │   ├── data
+│   │   │   ├── products.js
+│   │   │   └── user.js
+│   │   └── seed_data.js
+│   └── strategies
+│       └── local.js
+├── dist
+│   ├── images
+│   │   ├── Zooop-Logo.svg
+│   │   ├── favicon.ico
+│   │   └── header.jpg
+│   ├── partials
+│   │   └── components
+│   │       ├── app.html
+│   │       ├── create-ad.html
+│   │       ├── home.html
+│   │       ├── my-ads.html
+│   │       ├── purch-advert.html
+│   │       └── upload-catalogue.html
+│   ├── scripts
+│   │   ├── build.js
+│   │   ├── build.js.map
+│   │   └── vendor.js
+│   └── stylesheets
+│       ├── dashboard-styles.css
+│       ├── index-styles.css
+│       └── login-styles.css
+├── gulp_tasks
+│   ├── browserify.js
+│   ├── public_tasks.js
+│   ├── server.js
+│   └── tests.js
+├── gulpfile.js
+├── package.json
+├── public
+│   ├── images
+│   │   ├── Zooop-Logo.svg
+│   │   ├── favicon.ico
+│   │   └── header.jpg
+│   ├── partials
+│   │   └── components
+│   │       ├── app.html
+│   │       ├── create-ad.html
+│   │       ├── home.html
+│   │       ├── my-ads.html
+│   │       ├── purch-advert.html
+│   │       └── upload-catalogue.html
+│   ├── scripts
+│   │   ├── app.js
+│   │   ├── build.js
+│   │   ├── build.js.map
+│   │   ├── components
+│   │   │   ├── advertisement.js
+│   │   │   ├── app.js
+│   │   │   ├── createAd.js
+│   │   │   ├── home.js
+│   │   │   ├── index.js
+│   │   │   ├── myAds.js
+│   │   │   └── uploadCatalogue.js
+│   │   └── controllers
+│   │       ├── create_ad.js
+│   │       ├── index.js
+│   │       ├── my_ads.js
+│   │       ├── ui
+│   │       │   └── navbar_layout.js
+│   │       └── upload_catalogue.js
+│   ├── scss
+│   │   ├── dashboard
+│   │   │   └── base_styles.scss
+│   │   ├── index
+│   │   │   ├── base_styles.scss
+│   │   │   └── material_styles.scss
+│   │   └── login
+│   │       └── base_styles.scss
+│   ├── stylesheets
+│   │   └── styles.css
+│   └── vendor_scripts
+│       ├── cbpAnimatedHeader.js
+│       ├── classie.js
+│       └── creative.js
+├── server.js
+├── tests
+│   └── server
+│       ├── fixtures
+│       │   ├── advertisements.js
+│       │   ├── clients.js
+│       │   ├── routes_test_data.js
+│       │   ├── sample_catalogue.txt
+│       │   └── users.js
+│       ├── integration
+│       │   ├── advertisements.js
+│       │   ├── api_routes.js
+│       │   ├── authentication.js
+│       │   ├── client.js
+│       │   ├── discover_product_api.js
+│       │   └── index_routes.js
+│       └── unit_tests
+│           ├── diggyBotTests.js
+│           ├── helpers
+│           │   ├── account.js
+│           │   ├── catalogue.js
+│           │   └── password.js
+│           └── models
+│               ├── advertisement.js
+│               └── client.js
+├── unix_deploy.sh
+└── windowDeploy.bat
+</code></pre>
+
+<p><i>The file structure was created using <code>tree -I 'node_modules'</code></i></p>
+
+<h4>
+<a id="gulpfilejs" class="anchor" href="#gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gulpfile.js</h4>
+
+<ul>
+<li>Build system for automating tasks</li>
+<li>Any tasks that you want to be run by default can be called here</li>
+<li>Any new tasks should be put into their own file and placed in the <code>gulp_tasks</code> folder.</li>
+</ul>
+
+<h4>
+<a id="public" class="anchor" href="#public" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Public</h4>
+
+<ul>
+<li>Contains all the static resources that are available to the client. Including the angular component<br>
+</li>
+</ul>
+
+<h4>
+<a id="dist" class="anchor" href="#dist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dist</h4>
+
+<ul>
+<li>All the processed resources are to be deposited here.</li>
+</ul>
+
+<h4>
+<a id="app" class="anchor" href="#app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>App</h4>
+
+<ul>
+<li>Contains all the code that runs on the server side</li>
+</ul>
+
+<h4>
+<a id="approutes" class="anchor" href="#approutes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>App/Routes</h4>
+
+<ul>
+<li>All routes that are to be made available should be placed here</li>
+</ul>
+
+<h4>
+<a id="appviews" class="anchor" href="#appviews" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>App/Views</h4>
+
+<ul>
+<li>Files are are dynamically rendered using EJS before being sent to the client.</li>
+</ul>
+
+<h4>
+<a id="apphelpers" class="anchor" href="#apphelpers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>App/Helpers</h4>
+
+<ul>
+<li>Contains provides the business logic</li>
+</ul>
+
+<h4>
+<a id="appmodels" class="anchor" href="#appmodels" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>App/Models</h4>
+
+<ul>
+<li>Contains the schemas for the mongoDB and the custom queries</li>
+</ul>
+
+<h4>
+<a id="config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config</h4>
+
+<ul>
+<li>Contains the configuration for the server. Depending on the environment the server will load different configurations eg. connecting to a different mongoDB</li>
+</ul>
+
+<h4>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h4>
+
+<ul>
+<li>Tests for both the server and client should be placed here.</li>
+<li>The testing libraries being uses are:
+
+<ul>
+<li>Mocha</li>
+<li>Chai</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="serverjs" class="anchor" href="#serverjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server.js</h4>
+
+<ul>
+<li>Main hook for initialising our application</li>
+</ul>
+
+<h2>
+<a id="project-dependancies" class="anchor" href="#project-dependancies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Dependancies</h2>
+
+<ul>
+<li><a href="http://expressjs.com/">ExpressJS</a></li>
+<li><a href="http://gulpjs.com/">Gulp.js</a></li>
+<li><a href="https://mochajs.org/">Mocha</a></li>
+<li><a href="http://chaijs.com/">Chai</a></li>
+<li><a href="https://www.npmjs.com/">NpmJS</a></li>
+<li><a href="http://www.embeddedjs.com/">EJS (.ejs)</a></li>
+<li><a href="https://angularjs.org/">AngularJS (1.5.x)</a></li>
+<li><a href="https://material.angularjs.org/latest/">Angular Material</a></li>
+<li><a href="http://www.getmdl.io/">MDL</a></li>
+<li><a href="https://www.browsersync.io/">BrowserSync</a></li>
+</ul>
+
+<h2>
+<a id="browsersync" class="anchor" href="#browsersync" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BrowserSync</h2>
+
+<ul>
+<li>This allows you to perform live reloading of the public resources and html files.</li>
+</ul>
+
+<h2>
+<a id="interesting-articles" class="anchor" href="#interesting-articles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interesting Articles</h2>
+
+<ul>
+<li>Testing <a href="http://mherman.org/blog/2015/09/10/testing-node-js-with-mocha-and-chai/#.VqvXA7CLSHo">Express</a>
+</li>
+<li><a href="http://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">Ubuntu VM stuff</a></li>
+<li><a href="http://www.restapitutorial.com/lessons/httpmethods.html">Restful Methods</a></li>
+</ul>
+
+<h3>
+<a id="schema-information" class="anchor" href="#schema-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Schema Information</h3>
+
+<ul>
+<li>Product schema is the master collection for every product</li>
+<li>Discover Product is schema is for the products maintained in various collections based on their origin/ethnicity</li>
+</ul>
+
+<h2>
+<a id="quirks-with-the-build" class="anchor" href="#quirks-with-the-build" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quirks with the build</h2>
+
+<ul>
+<li>If you've got tabs in your browser pointing to localhost:3000, close them when your finished as they keep trying to connect to port 5001</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/stephenoken/Zooop-Server">Zooop-server</a> is maintained by <a href="https://github.com/stephenoken">stephenoken</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
